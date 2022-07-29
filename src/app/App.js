@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from '../homepage/Homepage';
 import Header from '../homepage/header/Header';
-import NotFoundPage from './NotFoundPage';
+import NotFound from './NotFound';
 
 /**
  * @name App
@@ -15,8 +15,7 @@ const App = () => {
     <Header>
     <Routes>
       <Route exact path="/"   element={<HomePage /> } />
-       <Route path="*" element={<NotFoundPage />} />
-       <Route path="sell" element={<SellerPage />} />
+       <Route path="*" element={<NotFound />} />
    
     </Routes>
     </Header>
