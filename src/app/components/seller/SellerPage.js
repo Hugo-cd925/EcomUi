@@ -2,18 +2,20 @@ import {useEffect, useState} from 'react'
 import { fetchUsers } from './SellerService';
 const SellerPage = () => {
 
-    const [user, setUser] = useState({});
+    const [users, setUser] = useState({});
     const [apiError, setApiError] = useState(false);
 
     useEffect(() => {
-        fetchUsers(setUser, setApiError);
+        fetchUsers(setUsers, setApiError);
       }, []);
-    
+
     return (
         <div>
             SellerPage
             <div>
-                {user.FirstName}
+               {users && users.map((user) => (
+                <div>{user.FirstName}</div>
+               ))}
                 Seller Info displayed
             </div>
 
