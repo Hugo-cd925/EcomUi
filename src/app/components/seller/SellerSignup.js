@@ -9,7 +9,7 @@ const SellerSignup = () => {
             <div>
                 {/* {`Name: ${user.name !== undefined ? user.name : ''}`} */}
                 <h2>
-                    {user.firstName + " " + user.lastName}
+                    {user.FirstName + " " + user.LastName}
                 </h2>
             </div>
         </div>

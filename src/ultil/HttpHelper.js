@@ -1,4 +1,4 @@
-import Constants from './Constants';
+import constants from './Constants';
 
 /**
  * @name HttpHelper
@@ -8,7 +8,7 @@ import Constants from './Constants';
  * @param {Object} payload object to send
  * @return {Promise} - Promise from the fetch call
  */
-export default (route, method, payload) => fetch(Constants.BASE_URL_API + route, {
+export default (route, method, payload) => fetch(constants.BASE_URL_API + route, {
   method,
   headers: {
     'Content-Type': 'application/json',
