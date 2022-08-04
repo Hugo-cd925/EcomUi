@@ -19,7 +19,7 @@ export async function fetchUsers(setUsers, setApiError){
 }
 
 export async function fetchUserById(setUsers, id, setApiError){
-    await HttpHelper(`${constants.User/{id}}`, 'GET')
+    await HttpHelper(`${constants.USER_ENDPOINT}/${id}`, 'GET')
     .then((response) => {
         if (response.ok) {
             return response.json();

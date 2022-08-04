@@ -5,23 +5,31 @@ import Constants from '../../../ultil/Constants';
 
 const SellerPage = () => {
 
-    const [users, setUsers] = useState({});
+    const [user, setUser] = useState({});
     const [apiError, setApiError] = useState(false);
 
     useEffect(() => {
-        // fetchUserById(setUsers, 7, setApiError);
-        fetchUsers(setUsers, setApiError);
+        fetchUserById(setUser, 7, setApiError);
+        // fetchUsers(setUser, setApiError);
     }, []);
 
     useEffect(() => {
-        console.log(users)
+        console.log(user)
     }, []);
     const Navigate = useNavigate();
 
+        /**
+         * @name HandleCreate
+         * @Description Navigates users to specified route
+         */
     const HandleCreate = () => {
         Navigate('/Seller/Post');
     };
 
+    /**
+     * @name handleProfile
+     * @Description Navigates user to specified route
+     */
     const handleProfile = () => {
         Navigate('/Seller/Info');
     };
@@ -36,10 +44,10 @@ const SellerPage = () => {
             <div>
                 SellerPage
                 <div>
-                    {/* {users && users.map((user) => (
-                <div>{user.FirstName}</div>
+                    {/* {user && user.map((obj) => (
+                <div>{obj.FirstName}</div>
                ))} */}
-                    {users.FirstName}
+                    {user.FirstName}
                     Seller Info displayed
                 </div>
                 <div>
