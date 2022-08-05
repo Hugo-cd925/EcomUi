@@ -23,7 +23,8 @@ const SellerPage = () => {
          * @Description Navigates users to specified route
          */
     const HandleCreate = () => {
-        Navigate('/Seller/Post');
+        // Navigate('/Seller/Post');
+        console.log(user);
     };
 
     /**
