@@ -21,9 +21,6 @@ const App = () => {
         <Route path="Seller" element={<SellerPage />} />
         <Route path="Seller/Post" element={<PostProduct />} />
         <Route path="Seller/Info/:id" element={<EditProfile />} />
-
-
-
       </Routes>
       {/* </Header> */}
     </BrowserRouter>
