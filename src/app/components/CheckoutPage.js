@@ -128,6 +128,10 @@ function CheckoutPage() {
                                     <td>2</td>
                                     <td>17.98</td>
                                 </tr>
+                                <tr>
+                                    <td colSpan="2" className='text-end fw-bold'>Grand Total</td>
+                                    <td colSpan="2" className='text-end fw-bold'>$17.98</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
