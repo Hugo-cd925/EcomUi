@@ -9,7 +9,7 @@ const SellerPage = () => {
     const [apiError, setApiError] = useState(false);
 
     useEffect(() => {
-        fetchUserById(setUser, 7, setApiError);
+        fetchUserById(setUser, 1, setApiError);
         // fetchUsers(setUser, setApiError);
     }, []);
 
