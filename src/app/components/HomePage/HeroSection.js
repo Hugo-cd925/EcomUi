@@ -1,8 +1,14 @@
-import React from "react";
-import {Button} from './Button';
-import '../components/HeroSection.css';
-import '../App.css';
-import CardItem from "./CardItem";
+// import React from "react";
+// import {Button} from './Button';
+// import '../components/HeroSection.css';
+// import '../App.css';
+
+import React from 'react';
+import '../../App.css';
+import { Button } from './Button';
+import './HeroSection.css';
+
+
 
 
 function HeroSection() {
@@ -18,6 +24,7 @@ function HeroSection() {
                 </Button>
             </div>
          
+
         </div>
     );
 }
