@@ -9,6 +9,7 @@ import EditProfile from './components/seller/EditProfile';
 import CheckoutPage from './components/CheckoutPage'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Products from './components/Products';
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -24,7 +25,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
   return (
     <BrowserRouter>
-      {/* <Header> */}
+      <Header />
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route path="*" element={<NotFound />} />
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="Seller/Post" element={<PostProduct />} />
         <Route path="Seller/Info/:id" element={<EditProfile />} />
         <Route path="Checkout" element={<CheckoutPage />} />
+        <Route path='Products' element={<Products/>}/>
 
 
 
