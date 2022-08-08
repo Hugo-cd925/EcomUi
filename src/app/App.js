@@ -25,7 +25,7 @@ import Products from './components/Products';
 const App = () => {
   return (
     <BrowserRouter>
-      {/* <Header> */}
+      <Header />
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route path="*" element={<NotFound />} />
