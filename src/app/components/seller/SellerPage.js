@@ -23,8 +23,8 @@ const SellerPage = () => {
          * @Description Navigates users to specified route
          */
     const HandleCreate = () => {
-        // Navigate('/Seller/Post');
-        console.log(user);
+        Navigate('/Seller/Post');
+       
     };
 
     /**
@@ -32,7 +32,7 @@ const SellerPage = () => {
      * @Description Navigates user to specified route
      */
     const handleProfile = () => {
-        Navigate('/Seller/Info');
+        Navigate('/Seller/Info/1');
     };
     return (
         <>
@@ -48,8 +48,9 @@ const SellerPage = () => {
                     {/* {user && user.map((obj) => (
                 <div>{obj.FirstName}</div>
                ))} */}
+                 Info:
                     {user.firstName}
-                    Seller Info displayed
+                  
                 </div>
                 <div>
                     <button
