@@ -33,10 +33,13 @@ const EditProfile = () => {
         setUser({ ...user, [e.target.id]: e.target.value });
     };
     return (
-        <div>
+        <div className='py-2 bg-info'>
 
-            <div>
-                User Profile Info
+            <div className='container'>
+                <div className='container mt-3'>
+                   <p  className='fs-5'>Profile</p>
+                </div>
+               
             </div>
             <div>
                 <FormItem
