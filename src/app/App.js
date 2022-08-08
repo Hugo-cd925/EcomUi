@@ -16,6 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
   crossorigin="anonymous"
 />
 
+
 /**
  * @name App
  * @returns component
@@ -39,6 +40,18 @@ const App = () => {
       {/* </Header> */}
     </BrowserRouter>
 
+=========
+  
+    <Header>
+    <Routes>
+      <Route exact path="/"   element={<HomePage /> } />
+       <Route path="*" element={<NotFound />} />
+   
+    </Routes>
+    </Header>
+ 
+    
+>>>>>>>>> Temporary merge branch 2
   );
 }
 
