@@ -11,6 +11,8 @@ import CheckoutPage from './components/CheckoutPage'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from './components/Products';
 import Categories from './components/Categories';
+import Product from './components/Product';
+
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -36,6 +38,7 @@ const App = () => {
         <Route path="Checkout" element={<CheckoutPage />} />
         <Route path='Products' element={<Products/>}/>
         <Route path='Categories' element={<Categories/>}/>
+        <Route path='Products/:id' element={<Product/>}/>
       </Routes>
       {/* </Header> */}
     </BrowserRouter>

@@ -21,7 +21,7 @@ function Products() {
               key={index}
               className="col-md-3">
                   <a
-                    href="#"
+                    href={`/products${prod.id}`}
                     className="text-decoration-none text-dark text-center"
                   >
                     <div className="d-flex justify-content-center align-items-center-center">
@@ -34,6 +34,7 @@ function Products() {
                     </div>
                         <div className="mt-3">{prod.name}</div>
                   </a>
+                  <div className="d-flex justify-content-center align-items-center-center">${prod.price}</div>
               </div>
             );
           })}
