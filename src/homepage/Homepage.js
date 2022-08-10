@@ -1,39 +1,58 @@
 import React from "react";
 import css from "../app/App.css";
+import './Homepage.css';
 
 const HomePage = () => {
   return (
-    <div>
-      <div className='container'>
-      {/* <video src='/videos/video-1.mp4' autoPlay loop muted /> */}
-      <h1>Buyer or Seller</h1>
-      <p>What are you waiting for?</p>
+    <div className='container'>
+      <img src="Homepage_img.jpg" alt="Homepage_img"/>
+      <h1>What are you waiting for?</h1>
       <div className='hero-btns'>
         <button
           className='btns'
           buttonStyle='btn--outline'
           buttonSize='btn--large'
         >
-          GET STARTED
+          BUYER
         </button>
         <button
           className='btns'
           buttonStyle='btn--outline'
           buttonSize='btn--large'
         >
-          ABOUT US
+          SELLER
         </button>
       </div>
-    </div>
-  
-        {/* <div>
-          <h1>HomePage</h1>
-          <h3><button>Buyer</button> or <button>Seller</button>?</h3>
-        </div>
-       */}
-    </div>
+    </div> 
   );
 };
+
+export default HomePage
+
+ 
+
+
+{/* <div className='container'>
+      <h1>What are you waiting for?</h1>
+      <div className='hero-btns'>
+        <button
+          className='btns'
+          buttonStyle='btn--outline'
+          buttonSize='btn--large'
+        >
+          BUYER
+        </button>
+        <button
+          className='btns'
+          buttonStyle='btn--outline'
+          buttonSize='btn--large'
+        >
+          SELLER
+        </button>
+      </div>
+    </div> */}
+    
+
 
 
 export default HomePage

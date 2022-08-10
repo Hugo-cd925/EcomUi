@@ -10,8 +10,12 @@ import CheckoutPage from './components/CheckoutPage'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from './components/Products';
+
 import Categories from './components/Categories';
 import Product from './components/Product';
+
+
+import Footer from '../homepage/Footer';
 
 <link
   rel="stylesheet"
@@ -41,6 +45,7 @@ const App = () => {
         <Route path='Products/:id' element={<Product/>}/>
       </Routes>
       {/* </Header> */}
+      <Footer/>
     </BrowserRouter>
 
   );
