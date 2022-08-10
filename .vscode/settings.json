@@ -1,4 +1,5 @@
 {
+
     "appService.defaultWebAppToDeploy": "/subscriptions/ee5ca469-66a7-45dd-8b99-357ae32e8b22/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/Trade-UI",
     "appService.deploySubpath": "."
 }
