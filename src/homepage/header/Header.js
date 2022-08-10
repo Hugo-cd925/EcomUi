@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {Button} from '../Button';
 import { Link } from 'react-router-dom';
 import './Header.css';
-
+import GoogleLogin from '../../app/components/google/GoogleLogin';
 function Header() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
@@ -79,8 +79,11 @@ function Header() {
               </Link>
             </li> */}
           </ul>
-          {button && <Button buttonStyle='btn--outline'>BUYER</Button>}
+          {button && <Button style={
+            {color: 'white'}
+          } buttonStyle='btn--outline'>BUYER</Button>}
           {button && <Button buttonStyle='btn--outline'>SELLER</Button>}
+<GoogleLogin />       
         </div>
       </nav>
     </>
