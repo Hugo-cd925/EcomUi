@@ -5,6 +5,7 @@ import './Homepage.css';
 const HomePage = () => {
   return (
     <div className='container'>
+      <img src="Homepage_img.jpg" alt="Homepage_img"/>
       <h1>What are you waiting for?</h1>
       <div className='hero-btns'>
         <button
