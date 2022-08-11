@@ -88,7 +88,7 @@ export async function createUser(user, setUser, setApiError)  {
             if (response.ok) {
                 return response.json();
             }
-            throw new Error(response.statusText);
+            //throw new Error(response.statusText);
         })
         .then((body) => {
             setUser(body);
@@ -96,7 +96,7 @@ export async function createUser(user, setUser, setApiError)  {
         })
         .catch(() => {
             setApiError(true);
-        });
+        })
 };
 
 export async function loginUser (googleUser, setUser, setApiError) {

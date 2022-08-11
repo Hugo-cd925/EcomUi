@@ -3,20 +3,24 @@ import { useNavigate } from 'react-router-dom';
 import { fetchUsers, fetchUserById } from './SellerService';
 import Constants from '../../../ultil/Constants';
 import React from 'react';
+import { useAtom } from 'jotai';
 
 const SellerPage = () => {
 
-    const [user, setUser] = useState({});
-    const [apiError, setApiError] = useState(false);
+    //const [user, setUser] = useAtom(googleUser);
 
+   const [user, setUser] = useState({});
+    const [apiError, setApiError] = useState(false);
+    //store local storage after user logs in to use to updates
+    //googleUser or context api
     useEffect(() => {
-        fetchUserById(setUser, 1, setApiError);
+        fetchUserById(setUser, user.id, setApiError);
         // fetchUsers(setUser, setApiError);
-    }, []);
+    }, [user]);
 
     useEffect(() => {
         console.log(user)
-    }, []);
+    }, [user]);
     const Navigate = useNavigate();
 
         /**
@@ -25,16 +29,17 @@ const SellerPage = () => {
          */
     const HandleCreate = () => {
         Navigate('/Seller/Post');
+    
        
     };
-
-    /**
+   /**
      * @name handleProfile
      * @Description Navigates user to specified route
      */
-    const handleProfile = () => {
-        Navigate('/Seller/Info/1');
+    const handleProfile = (id) => {
+        Navigate(`/Seller/Info/${id}`);
     };
+
     return (
         <>
             {apiError && (
@@ -67,10 +72,14 @@ const SellerPage = () => {
                 >
                     Edit
                 </button> */}
+<button type='button' onClick={() => 
+            handleProfile(user.id)
+          }
+            >
+              Edit Info
+            </button>
 
-                    <button
-                        onClick={handleProfile}
-                    >Edit Profile</button>
+                 
                 </div>
 
             </div>
