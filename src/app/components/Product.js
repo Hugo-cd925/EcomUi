@@ -20,6 +20,7 @@ function Product() {
         <img style={{ width: "35%" }} src={prod.img}/>
         <p>{prod.description}</p>
         <p>${prod.price}</p>
+        <input type=""></input>
         <button>Add to cart</button>
         </div>
     </div>
