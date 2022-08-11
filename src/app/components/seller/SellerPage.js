@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { fetchUsers, fetchUserById } from './SellerService';
+import { fetchUsers, fetchUserById, getGoogleUser } from './SellerService';
 import Constants from '../../../ultil/Constants';
 import React from 'react';
 import { useAtom } from 'jotai';
@@ -15,6 +15,7 @@ const SellerPage = () => {
     //googleUser or context api
     useEffect(() => {
         fetchUserById(setUser, user.id, setApiError);
+        getGoogleUser(setUser);
         // fetchUsers(setUser, setApiError);
     }, [user]);
 

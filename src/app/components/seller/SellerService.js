@@ -52,6 +52,34 @@ export async function fechUserByEmail (email, setUser)  {
     return userByEmailExists;
 };
 
+export async function getGoogleUser(setUser){
+    const email = await fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${sessionStorage.getItem('token')}`)
+    .then((res) => res.json())
+    .then((user) => (user.email));
+  const user = {};
+  if(email == undefined || null){
+    console.log('fail');
+  }
+  if(email !== undefined)
+  {
+    console.log(email);
+    await HttpHelper(`${constants.USER_ENDPOINT}/${email}`, 'GET')
+        .then((response) => response.json())
+      .then((data) => {
+        setUser(data);
+        // user.name = `${data.firstName} ${data.lastName}`;
+        // user.streetAddress = data.streetAddress;
+        // user.streetAddress2 = data.streetAddress2;
+        // user.city = data.city;
+        // user.state = data.state;
+        // user.zipCode = data.zipCode;
+        // user.email = email;
+      
+      });
+  }
+//   setUser(user);
+    }
+
 /**
  * @name fetchUserById
  * @description Returns user with specified ID

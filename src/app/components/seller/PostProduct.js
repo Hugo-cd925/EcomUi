@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { createProduct } from '../products/ProductService';
 
 const PostProduct = () => {
+  
   const [product, setProduct] = useState({
     name:'',
     active: false,
@@ -20,6 +21,7 @@ const PostProduct = () => {
   const onChange = (e) => {
     setProduct({ ...product, [e.target.id]: e.target.value });
 };
+
 const sendProduct = () => {
   console.log(product);
   createProduct(product, setApiError);

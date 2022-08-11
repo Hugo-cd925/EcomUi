@@ -7,6 +7,7 @@ const GoogleLogin = () => {
     const [user, setUser] = useState({});
     const [apiError, setApiError] = useState(false);
 
+      //useParam
     const handleCallbackResponse = (response) => {
 
         var userObject = jwt_decode(response.credential);
@@ -18,6 +19,7 @@ const GoogleLogin = () => {
           img: userObject.picture,
           role: 'Buyer'
         };
+        console.log(user);
         loginUser(googleUser, setUser);
         //setUser(userObject);
        

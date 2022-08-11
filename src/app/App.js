@@ -36,9 +36,9 @@ const App = () => {
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="Seller" element={<SellerPage />} />
+        <Route path="Seller/:id" element={<SellerPage />} />
         <Route path="Seller/Post" element={<PostProduct />} />
-        <Route path="Seller/Info/:id" element={<EditProfile />} />
+        <Route path="Seller/Edit/:id" element={<EditProfile />} />
         <Route path="Checkout" element={<CheckoutPage />} />
         <Route path='Products' element={<Products/>}/>
         <Route path='Categories' element={<Categories/>}/>
