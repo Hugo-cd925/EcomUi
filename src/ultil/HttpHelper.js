@@ -11,8 +11,8 @@ import constants from './Constants';
 export default (route, method, payload) => fetch(constants.BASE_URL_API + route, {
   method,
   headers: {
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${sessionStorage.getItem('token')}`
+    'Content-Type': 'application/json'
+    //Authorization: `Bearer ${sessionStorage.getItem('token')}`
   },
   body: JSON.stringify(payload)
 });

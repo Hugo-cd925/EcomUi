@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import {Button} from '../Button';
+import { Button } from '../Button';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import GoogleLogin from '../../app/components/google/GoogleLogin';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(null);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -23,7 +26,11 @@ function Header() {
   }, []);
 
   window.addEventListener('resize', showButton);
-
+  const nav = useNavigate();
+  const sendSeller = () => {
+    nav('/Seller');
+    console.log('hit');
+  };
   return (
 
 
@@ -46,11 +53,11 @@ function Header() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/services'
+                to='/Seller'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Services
+                Seller
               </Link>
             </li>
             <li className='nav-item'>
@@ -62,7 +69,7 @@ function Header() {
                 Products
               </Link>
             </li>
-{/* 
+            {/* 
             <li>
               <Link
                 to='/sign-up'
@@ -71,19 +78,22 @@ function Header() {
               >
                 Buyer
               </Link>
-            </li>
+  </li> 
             <li>
               <Link
-                to='/sign-up'
+                to='/Seller'
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >
                 Seller
               </Link>
-            </li> */}
-          </ul>
-          {button && <Button buttonStyle='btn--outline'>BUYER</Button>}
-          {button && <Button buttonStyle='btn--outline'>SELLER</Button>}
+            </li> 
+            */}
+  </ul> 
+
+          <GoogleLogin setLoggedIn={setLoggedIn} />
+          {button && <Button  buttonStyle='btn--outline'>BUYER</Button>}
+          {button && <Button  buttonStyle='btn--outline'>SELLER</Button>}
         </div>
       </nav>
     </>
