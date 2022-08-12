@@ -12,7 +12,7 @@ import constants from '../../../ultil/Constants';
  export async function createProduct(product, setApiError)  {
     await HttpHelper(`${constants.PRODUCT_ENDPOINT}`, 'POST', product)
         .then((response) => {
-            console.log(product);
+            console.log("pt2");
             if (response.ok) {
                 console.log("made it");
                 return response.json();

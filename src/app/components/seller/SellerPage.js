@@ -34,10 +34,11 @@ const SellerPage = () => {
          * @Description Navigates users to specified route
          */
     const HandleCreate = () => {
-        //Navigate('/Seller/Post');
+        Navigate('/Seller/Post');
+        //{googleUser.firstName + ' ' + googleUser.lastName}
         //console.log(window.sessionStorage.getItem("loggedIn"));
         //console.log(window.sessionStorage.getItem("user"));
-        console.log(user);
+       
        
     };
    /**
