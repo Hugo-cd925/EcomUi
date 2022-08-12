@@ -15,7 +15,7 @@ function Categories() {
     return (    
       <>
         <div className="container col-md-6 mt-5">
-          <ul class="list-group">
+          <ul className="list-group">
             {categ.map(cat=><li className="list-group-item"><a href="#">{cat.name}</a></li>)}
             
           </ul>
@@ -25,6 +25,7 @@ function Categories() {
   }else{
     return(
       <>
+      Categories Page
       </>
     )
   }

@@ -14,7 +14,30 @@ export async function fetchUsers(setUsers, setApiError) {
             if (response.ok) {
                 return response.json();
             }
-            throw new Error(constants.API_ERROR);
+            
+        })
+        .then((data) => {
+            setUsers(data);
+        })
+        .catch(() => {
+            setApiError(true);
+        })
+}
+
+
+/**
+ * @name getUserByEmail
+ * @descrption Gets all users
+ * @param {*} setUsers 
+ * @param {*} setApiError 
+ */
+ export async function getUserByEmail(email, setUsers, setApiError) {
+    await HttpHelper(`${constants.USER_ENDPOINT}/${email}`, 'GET')
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+            
         })
         .then((data) => {
             setUsers(data);
@@ -46,11 +69,40 @@ export async function fechUserByEmail (email, setUser)  {
         })
         .then((body) => {
             setUser(body);
+            
             //document.cookie = `user=${JSON.stringify(body)}`;
         })
         .catch(() => { });
     return userByEmailExists;
 };
+
+export async function getGoogleUser(setUser){
+    const email = await fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${sessionStorage.getItem('token')}`)
+    .then((res) => res.json())
+    .then((user) => (user.email));
+  const user = {};
+  if(email == undefined || null){
+    console.log('fail');
+  }
+  if(email !== undefined)
+  {
+    console.log(email);
+    await HttpHelper(`${constants.USER_ENDPOINT}/${email}`, 'GET')
+        .then((response) => response.json())
+      .then((data) => {
+        setUser(data);
+        // user.name = `${data.firstName} ${data.lastName}`;
+        // user.streetAddress = data.streetAddress;
+        // user.streetAddress2 = data.streetAddress2;
+        // user.city = data.city;
+        // user.state = data.state;
+        // user.zipCode = data.zipCode;
+        // user.email = email;
+      
+      });
+  }
+//   setUser(user);
+    }
 
 /**
  * @name fetchUserById
@@ -88,7 +140,7 @@ export async function createUser(user, setUser, setApiError)  {
             if (response.ok) {
                 return response.json();
             }
-            throw new Error(response.statusText);
+            //throw new Error(response.statusText);
         })
         .then((body) => {
             setUser(body);
@@ -96,13 +148,12 @@ export async function createUser(user, setUser, setApiError)  {
         })
         .catch(() => {
             setApiError(true);
-        });
+        })
 };
 
 export async function loginUser (googleUser, setUser, setApiError) {
     const userByEmailExists = await fechUserByEmail(googleUser.email, setUser);
     if (!userByEmailExists) {
-        console.log("create user");
       createUser(googleUser, setUser, setApiError);
     }
   };

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function Products() {
-  const url = "https://localhost:7218/api/Products";
+  const url = "https://ecomtrading.azurewebsites.net/Products";
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ function Products() {
               key={index}
               className="col-md-3">
                   <a
-                    href={`/products${prod.id}`}
+                    href={`/products/${prod.id}`}
                     className="text-decoration-none text-dark text-center"
                   >
                     <div className="d-flex justify-content-center align-items-center-center">
@@ -42,7 +42,10 @@ function Products() {
       </div>
     );
   }
-  return <></>;
+  return <>
+              <h1 className="m-5 text-center">Products Page</h1>
+
+      </>;
 }
 
 export default Products;
