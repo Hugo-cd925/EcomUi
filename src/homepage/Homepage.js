@@ -28,31 +28,3 @@ const HomePage = () => {
 };
 
 export default HomePage
-
- 
-
-
-{/* <div className='container'>
-      <h1>What are you waiting for?</h1>
-      <div className='hero-btns'>
-        <button
-          className='btns'
-          buttonStyle='btn--outline'
-          buttonSize='btn--large'
-        >
-          BUYER
-        </button>
-        <button
-          className='btns'
-          buttonStyle='btn--outline'
-          buttonSize='btn--large'
-        >
-          SELLER
-        </button>
-      </div>
-    </div> */}
-    
-
-
-
-export default HomePage
