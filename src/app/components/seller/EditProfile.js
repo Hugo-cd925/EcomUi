@@ -5,7 +5,7 @@ import usStates from '../forms/State';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Container, Row, Col } from 'react-bootstrap';
-
+import { useNavigate } from 'react-router-dom';
 const EditProfile = () => {
 
     const [user, setUser] = useState({
@@ -33,9 +33,15 @@ const EditProfile = () => {
         //PutUser(setUser, id, setApiError)
     };
 
+    const nav = useNavigate();
+    const cancelProfile = () => {
+        nav('Seller');
+    }
+
     const onChange = (e) => {
         setUser({ ...user, [e.target.id]: e.target.value });
     };
+
     const btn = { backgroundColor: '#242424' };
 
     return (
@@ -86,7 +92,7 @@ const EditProfile = () => {
 
                 </Row>
                 <Row>
-                    <Button onClick={sendProfile} variant="primary" type="submit">
+                    <Button onClick={cancelProfile} variant="secondary" type="submit">
                         Cancel
                     </Button>
 

@@ -154,7 +154,6 @@ export async function createUser(user, setUser, setApiError)  {
 export async function loginUser (googleUser, setUser, setApiError) {
     const userByEmailExists = await fechUserByEmail(googleUser.email, setUser);
     if (!userByEmailExists) {
-        console.log("create user");
       createUser(googleUser, setUser, setApiError);
     }
   };
