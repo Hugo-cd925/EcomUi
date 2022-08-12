@@ -84,7 +84,8 @@ const EditProfile = () => {
                         Update
                     </Button>
 
-                </Row><Row>
+                </Row>
+                <Row>
                     <Button onClick={sendProfile} variant="primary" type="submit">
                         Cancel
                     </Button>
