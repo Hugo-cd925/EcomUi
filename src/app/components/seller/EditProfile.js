@@ -17,6 +17,7 @@ const EditProfile = () => {
         phoneNumber: '',
 
     });
+    
     const [errors, setErrors] = useState({
         streetAddress: '',
         streetAddress2: '',
