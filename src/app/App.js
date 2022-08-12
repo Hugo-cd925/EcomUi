@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from './components/Products';
 import Categories from './components/Categories';
 import Product from './components/Product';
+import Cart from './components/Cart';
 
 <link
   rel="stylesheet"
@@ -39,6 +40,7 @@ const App = () => {
         <Route path='Products' element={<Products/>}/>
         <Route path='Categories' element={<Categories/>}/>
         <Route path='Products/:id' element={<Product/>}/>
+        <Route path='Cart' element={<Cart />}/>
       </Routes>
       {/* </Header> */}
     </BrowserRouter>

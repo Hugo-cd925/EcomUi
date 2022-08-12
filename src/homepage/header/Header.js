@@ -67,6 +67,7 @@ const Header = () => {
               </li>
             </ul>
              <form className="d-flex" role="search">
+        
         <button className="btn btn-outline-success" type="submit">Sign up</button>
         <button className="btn btn-outline-success" type="submit">Login</button>
       </form>
