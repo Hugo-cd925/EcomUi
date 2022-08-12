@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import jwt_decode from 'jwt-decode';
 import { loginUser} from '../seller/SellerService';
 
-const GoogleLogin = () => {
+const GoogleLogin = ({ setLoggedIn }) => {
 
     const [user, setUser] = useState({});
     const [apiError, setApiError] = useState(false);
@@ -19,12 +19,12 @@ const GoogleLogin = () => {
           img: userObject.picture,
           role: 'Buyer'
         };
-        console.log(user);
+        window.sessionStorage.setItem("user", googleUser);
+        setLoggedIn=(true);
         loginUser(googleUser, setUser);
-        //setUser(userObject);
+        sessionStorage.setItem('loggedIn', 'true');
+        sessionStorage.setItem('user', JSON.stringify(googleUser));
        
-        //send call to get user by email 
-        //if user doesnt exist call create user. 
     };
     useEffect(() => {
         /* global google */

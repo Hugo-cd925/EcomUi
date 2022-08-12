@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { fetchUsers, fetchUserById, getGoogleUser } from './SellerService';
+import { getUserByEmail} from './SellerService';
 import Constants from '../../../ultil/Constants';
 import React from 'react';
-import { useAtom } from 'jotai';
+
 
 const SellerPage = () => {
 
@@ -11,17 +11,22 @@ const SellerPage = () => {
 
    const [user, setUser] = useState({});
     const [apiError, setApiError] = useState(false);
+    // console.log(window.sessionStorage.getItem("loggedIn"));
+
     //store local storage after user logs in to use to updates
     //googleUser or context api
+    const googleUser = JSON.parse(window.sessionStorage.getItem("user"));
+    const email = googleUser.email;
+
     useEffect(() => {
-        fetchUserById(setUser, user.id, setApiError);
-        getGoogleUser(setUser);
+        
+        getUserByEmail(googleUser.email, setUser, setApiError);
+
+        //fetchUserById(setUser, googleUser., setApiError);
+        // getGoogleUser(setUser);
         // fetchUsers(setUser, setApiError);
     }, [user]);
 
-    useEffect(() => {
-        console.log(user)
-    }, [user]);
     const Navigate = useNavigate();
 
         /**
@@ -29,8 +34,10 @@ const SellerPage = () => {
          * @Description Navigates users to specified route
          */
     const HandleCreate = () => {
-        Navigate('/Seller/Post');
-    
+        //Navigate('/Seller/Post');
+        //console.log(window.sessionStorage.getItem("loggedIn"));
+        //console.log(window.sessionStorage.getItem("user"));
+        console.log(user);
        
     };
    /**
@@ -56,7 +63,7 @@ const SellerPage = () => {
                 <div>{obj.FirstName}</div>
                ))} */}
                  Info:
-                    {user.firstName}
+                    {user?.firstName}
                   
                 </div>
                 <div>
@@ -88,4 +95,19 @@ const SellerPage = () => {
     )
 }
 
-export default SellerPage   
+export default SellerPage;   
+
+// [HttpGet("{email}")]
+// public async Task<ActionResult<User>> GetUserByEmailAsync(string email)
+// {
+
+//     //FirstOrDefault
+
+//     var user = await _context.User.Where(u => u.Email == email).SingleOrDefaultAsync();
+//     if(user ==null )
+//     {
+//         return NotFound();
+//     }
+
+//     return Ok(user);
+// }

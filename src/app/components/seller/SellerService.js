@@ -14,7 +14,30 @@ export async function fetchUsers(setUsers, setApiError) {
             if (response.ok) {
                 return response.json();
             }
-            throw new Error(constants.API_ERROR);
+            
+        })
+        .then((data) => {
+            setUsers(data);
+        })
+        .catch(() => {
+            setApiError(true);
+        })
+}
+
+
+/**
+ * @name getUserByEmail
+ * @descrption Gets all users
+ * @param {*} setUsers 
+ * @param {*} setApiError 
+ */
+ export async function getUserByEmail(email, setUsers, setApiError) {
+    await HttpHelper(`${constants.USER_ENDPOINT}/${email}`, 'GET')
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+            
         })
         .then((data) => {
             setUsers(data);
@@ -46,6 +69,7 @@ export async function fechUserByEmail (email, setUser)  {
         })
         .then((body) => {
             setUser(body);
+            
             //document.cookie = `user=${JSON.stringify(body)}`;
         })
         .catch(() => { });
