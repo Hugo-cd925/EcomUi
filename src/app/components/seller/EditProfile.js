@@ -1,10 +1,11 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import FormItem from '../forms/InputForms';
 import FormItemDropdown from '../forms/SelectForm';
 import usStates from '../forms/State';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-
+import { Container, Row, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 const EditProfile = () => {
 
     const [user, setUser] = useState({
@@ -16,6 +17,7 @@ const EditProfile = () => {
         phoneNumber: '',
 
     });
+    
     const [errors, setErrors] = useState({
         streetAddress: '',
         streetAddress2: '',
@@ -32,140 +34,74 @@ const EditProfile = () => {
         //PutUser(setUser, id, setApiError)
     };
 
+    const nav = useNavigate();
+    const cancelProfile = () => {
+        nav('Seller');
+    }
+
     const onChange = (e) => {
         setUser({ ...user, [e.target.id]: e.target.value });
     };
+
+    const btn = { backgroundColor: '#242424' };
+
     return (
+        <Container style={btn}>
+            <Form>
+                <Row>
+                    <Form.Group className="mb-3" controlId="streetAddress">
+                        <Form.Label>Address</Form.Label>
+                        <Form.Control onChange={onChange} type="text" placeholder="1234 Main" />
+                        <Form.Text className="text-muted">
+                            We'll never share your information with anyone else.
+                        </Form.Text>
+                    </Form.Group>
+                </Row>
+                <Row>
+                    <Form.Group className="mb-3" controlId="streetAddress2">
+                        <Form.Label>Address</Form.Label>
+                        <Form.Control onChange={onChange} type="text" placeholder="apt .." />
+                    </Form.Group>
+                </Row>
+                <Row>
+                    <Col>
+                        <Form.Group className="mb-3" controlId="state">
+                            <Form.Label>State</Form.Label>
+                            <Form.Control onChange={onChange} type="email" placeholder="CA" />
+                        </Form.Group></Col>
+                    <Col>
+                        <Form.Group className="mb-3" controlId="zipCode">
+                            <Form.Label>State</Form.Label>
+                            <Form.Control onChange={onChange} type="email" placeholder="CA" />
+                        </Form.Group>
+                    </Col>
+                    <Row>
+                        <Form.Group className="mb-3" controlId="phoneNumber">
+                            <Form.Label>Phone:</Form.Label>
+                            <Form.Control onChange={onChange} type="email" placeholder="(xxx) xxx--xxxx" />
+                        </Form.Group>
+                    </Row>
+                </Row>
 
-        <div>
-<Form>
-<Form.Group className="mb-3" controlId="streetAddress">
-        <Form.Label>Address</Form.Label>
-        <Form.Control onChange={onChange} type="text" placeholder="1234 Main" />
-        <Form.Text className="text-muted">
-          We'll never share your information with anyone else.
-        </Form.Text>
-      </Form.Group>
 
-      <Form.Group className="mb-3" controlId="streetAddress2">
-        <Form.Label>Address</Form.Label>
-        <Form.Control onChange={onChange} type="text" placeholder="apt .." />
-      </Form.Group>
 
-      <Form.Group className="mb-3" controlId="state">
-        <Form.Label>State</Form.Label>
-        <Form.Control  onChange={onChange} type="email" placeholder="CA" />
-      </Form.Group>
+                <Row>
 
-      <Form.Group className="mb-3" controlId="state">
-        <Form.Label>State</Form.Label>
-        <Form.Control  onChange={onChange} type="email" placeholder="CA" />
-      </Form.Group>
+                    <Button onClick={sendProfile} variant="primary" type="submit">
+                        Update
+                    </Button>
 
-      <Form.Group className="mb-3" controlId="zipCode">
-        <Form.Label>State</Form.Label>
-        <Form.Control  onChange={onChange} type="email" placeholder="CA" />
-      </Form.Group>
+                </Row>
+                <Row>
+                    <Button onClick={cancelProfile} variant="secondary" type="submit">
+                        Cancel
+                    </Button>
 
-      <Form.Group className="mb-3" controlId="phoneNumber">
-        <Form.Label>Phone:</Form.Label>
-        <Form.Control  onChange={onChange} type="email" placeholder="(xxx) xxx--xxxx" />
-      </Form.Group>
+                </Row>
 
-    
-      <Button onClick={sendProfile} variant="primary" type="submit">
-        Update
-      </Button> 
-</Form>
-            {/* <div className='container'>
-                <div className='container mt-3'>
-                   <p  className='fs-5'>Profile</p>
-                </div>
-               
-            </div>
-            <div>
-                <FormItem
-                    type="text"
-                    id="streetAddress"
-                    label="Street Address:"
-                    onChange={onChange}
-                    // value={user?.streetAddress}
-                    hasErrors={Boolean(errors.streetAddress)}
+            </Form>
+        </Container>
 
-                />
-                <span>{errors.streetAddress}</span>
-            </div>
-            <div>
-                <FormItem
-                    type="text"
-                    id="streetAddress2"
-                    label="Street Address 2:"
-                    onChange={onChange}
-                    // value={user?.streetAddress}
-                    hasErrors={Boolean(errors.streetAddress)}
-
-                />
-                <span>{errors.streetAddress2}</span>
-            </div>
-            <div>
-                <FormItem
-                    type="text"
-                    id="city"
-                    label="City:"
-                    onChange={onChange}
-                    // value={user?.city}
-                    hasErrors={Boolean(errors.city)}
-
-                />
-                <span>{errors.city}</span>
-            </div>
-
-            <div>
-                {/* <FormItemDropdown 
-                id="state"
-                label='State'
-                onClick={onChange}
-                onChange={onChange}
-                value={user?.state}
-                options={usStates}
-                /> */}
-                        {/* <FormItem
-                    type="text"
-                    id="state"
-                    label="State:"
-                    onChange={onChange}
-                    // value={user?.state}
-                    hasErrors={Boolean(errors.state)} />
-            </div>
-            <div>
-                <FormItem
-                    type="text"
-                    id="zipCode"
-                    onChange={onChange}
-                    // value={user?.zipCode}
-                    hasErrors={Boolean(errors.zipCode)}
-
-                />
-                <span>{errors.zipCode}</span>
-            </div>
-            <div>
-                <FormItem
-                    type="text"
-                    id="phoneNumber"
-                    label="Phone"
-                    onChange={onChange}
-                    // value={user?.phoneNumber}
-                    hasErrors={Boolean(errors.phoneNumber)}
-
-                />
-                <span>{errors.phoneNumber}</span>
-            </div>
-            <div>
-                <button type='submit' onClick={sendProfile}
-                >Confirm</button>
-            </div> */}
-
-        </div> 
     )
 }
 

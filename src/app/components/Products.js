@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function Products() {
-  const url = "https://localhost:7218/api/Products";
+  const url = "https://ecomtrading.azurewebsites.net/Products";
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
