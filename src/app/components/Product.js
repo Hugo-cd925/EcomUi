@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 function Product() {
   const {id} = useParams();
-  const url = `https://localhost:7218/api/Products/${id}`;
+  const url = `https://ecomtrading.azurewebsites.net/Products/${id}`;
   const [prod, setProd] = useState(null);
   useEffect(()=>{
     axios.get(url).then(res=>{
