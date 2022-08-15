@@ -13,11 +13,11 @@ import Products from './components/Products';
 
 import Categories from './components/Categories';
 import Product from './components/Product';
+import Cart from './components/Cart';
+import Success from './components/Success';
 
 
 import Footer from '../homepage/Footer';
-import Aboutus from '../homepage/pages/Aboutus';
-import Cards from '../homepage/pages/Cards';
 
 <link
   rel="stylesheet"
@@ -43,10 +43,10 @@ const App = () => {
         <Route path="Seller/Edit/:id" element={<EditProfile />} />
         <Route path="Checkout" element={<CheckoutPage />} />
         <Route path='Products' element={<Products/>}/>
-        <Route path='Aboutus' element={<Aboutus/>}/>
-        
-
-
+        <Route path='Categories' element={<Categories/>}/>
+        <Route path='Products/:id' element={<Product/>}/>
+        <Route path='Cart' element={<Cart />}/>
+        <Route path='Success' element={<Success />}/>
       </Routes>
       {/* </Header> */}
       <Footer/>

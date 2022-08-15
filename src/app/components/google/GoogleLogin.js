@@ -27,7 +27,7 @@ const GoogleLogin = ({ setLoggedIn }) => {
        
     };
     useEffect(() => {
-        /* global google */
+            /*global google*/
             google.accounts.id.initialize({
               client_id: "575948866004-i0lapgehq080re6t6rkesqmln6knlhl9.apps.googleusercontent.com",
               callback : handleCallbackResponse
