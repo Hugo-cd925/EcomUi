@@ -17,9 +17,9 @@ function Cards() {
             />
              <CardItem
               src='selling_tag.png'
-              text='Have something worth selling? Try creating a Seller account and post products for others to see.'
+              text='Have something worth selling? Try creating a Seller Account and post products for others to see.'
               label='Selling?'
-              path='/services'
+              path='/SignIn'
             />
           </ul>
         </div>
