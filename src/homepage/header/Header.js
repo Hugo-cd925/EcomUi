@@ -50,6 +50,7 @@ function Header() {
                 Products
               </Link>
             </li>
+
             <li className='nav-item'>
               <Link
                 to='/aboutus'
@@ -59,6 +60,7 @@ function Header() {
                 About Us
               </Link>
             </li>
+{/* 
             <li>
               <Link
                 to='/sign-up'
@@ -76,7 +78,7 @@ function Header() {
               >
                 Seller
               </Link>
-            </li>
+            </li> */}
           </ul>
           {button && <Button buttonStyle='btn--outline'>BUYER</Button>}
           {button && <Button buttonStyle='btn--outline'>SELLER</Button>}

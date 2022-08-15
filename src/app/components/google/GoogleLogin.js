@@ -1,22 +1,26 @@
 import {useEffect, useState} from 'react';
 import jwt_decode from 'jwt-decode';
+import { loginUser} from '../seller/SellerService';
+
 const GoogleLogin = () => {
 
     const [user, setUser] = useState({});
+    const [apiError, setApiError] = useState(false);
 
     const handleCallbackResponse = (response) => {
-        console.log("encoded JWT token:" + response.credential);
+
         var userObject = jwt_decode(response.credential);
-        console.log(userObject);
-        setUser(userObject);
+
         const googleUser = {
-          //user properties would go here
           email: userObject.email,
           firstName: userObject.given_name,
-          lastName: userObject.family_name
-  
+          lastName: userObject.family_name,
+          img: userObject.picture,
+          role: 'Buyer'
         };
-        console.log(googleUser);
+        loginUser(googleUser, setUser);
+        //setUser(userObject);
+       
         //send call to get user by email 
         //if user doesnt exist call create user. 
     };
