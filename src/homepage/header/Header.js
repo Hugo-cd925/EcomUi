@@ -87,26 +87,18 @@ function Header() {
                 Products
               </Link>
             </li>
-            {/* 
+            
             <li>
               <Link
-                to='/sign-up'
+                to='/Cart'
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >
-                Buyer
+                Cart
+               
               </Link>
-  </li> 
-            <li>
-              <Link
-                to='/Seller'
-                className='nav-links-mobile'
-                onClick={closeMobileMenu}
-              >
-                Seller
-              </Link>
-            </li> 
-            */}
+              </li>
+           
   </ul> 
 
           <GoogleLogin setLoggedIn={setLoggedIn} />
