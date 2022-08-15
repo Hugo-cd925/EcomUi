@@ -46,11 +46,11 @@ function Header() {
 
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                 Home
               </Link>
-            </li>
+            </li> */}
             <li className='nav-item'>
               <Link
                 to='/Seller'
@@ -76,6 +76,15 @@ function Header() {
                 onClick={closeMobileMenu}
               >
                 Products
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
+                to='/cart'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Cart
               </Link>
             </li>
             {/* 
