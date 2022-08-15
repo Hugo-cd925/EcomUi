@@ -45,11 +45,11 @@ function Header() {
 
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                 Home
               </Link>
-            </li>
+            </li> */}
             <li className='nav-item'>
               <Link
                 to='/Aboutus'
@@ -69,17 +69,35 @@ function Header() {
                 Products
               </Link>
             </li>
-            
+            <li className='nav-item'>
+              <Link
+                to='/cart'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Cart
+              </Link>
+            </li>
+            {/* 
             <li>
               <Link
-                to='/Cart'
+                to='/sign-up'
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >
                 Cart
               </Link>
-              </li>
-           
+  </li> 
+            <li>
+              <Link
+                to='/Seller'
+                className='nav-links-mobile'
+                onClick={closeMobileMenu}
+              >
+                Seller
+              </Link>
+            </li> 
+            */}
   </ul> 
 
           <GoogleLogin setLoggedIn={setLoggedIn} />

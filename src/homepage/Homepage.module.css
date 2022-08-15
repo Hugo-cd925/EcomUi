@@ -25,7 +25,7 @@
     transition: all 0.3s ease-out;
   font-size: 20px;
 } 
-img {
+.homeimg {
   object-fit: cover;
   position: fixed;
   z-index: -1;
