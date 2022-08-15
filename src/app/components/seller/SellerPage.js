@@ -65,8 +65,8 @@ const SellerPage = () => {
                         {/* {user && user.map((obj) => (
                 <div>{obj.FirstName}</div>
                ))} */}
-                        Info:
-                        {user?.firstName}
+               <h1>   {user?.firstName}</h1>
+                     
 
                     </div>
                     <div>
