@@ -10,35 +10,15 @@ function Cards() {
         <div className='cards__wrapper'>
           <ul className='cards__items'>
             <CardItem
-              src='shopping_basket.jpg'
-              text='Looking for something exciting? Click Here!'
+              src='shopping_basket_2.jpg'
+              text='Trade allows users to post products for buyers to purchase, take some time to browse through some.'
               label='Browse'
-              path='/services'
+              path='/products'
             />
              <CardItem
-              src='shopping_basket.jpg'
-              text='Looking for something exciting? Click Here!'
-              label='Browse'
-              path='/services'
-            />
-          </ul>
-          <ul className='cards__items'>
-          <CardItem
-              src='shopping_basket.jpg'
-              text='Looking for something exciting? Click Here!'
-              label='Browse'
-              path='/services'
-            />
-            <CardItem
-              src='shopping_basket.jpg'
-              text='Looking for something exciting? Click Here!'
-              label='Browse'
-              path='/services'
-            />
-           <CardItem
-              src='shopping_basket.jpg'
-              text='Looking for something exciting? Click Here!'
-              label='Browse'
+              src='selling_tag.png'
+              text='Have something worth selling? Try creating a Seller account and post products for others to see.'
+              label='Selling?'
               path='/services'
             />
           </ul>

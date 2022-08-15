@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from '../Button';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import GoogleLogin from '../../app/components/google/GoogleLogin';
@@ -53,15 +52,6 @@ function Header() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/Seller'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Seller
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link
                 to='/Aboutus'
                 className='nav-links'
                 onClick={closeMobileMenu}
@@ -93,8 +83,13 @@ function Header() {
   </ul> 
 
           <GoogleLogin setLoggedIn={setLoggedIn} />
-          {button && <Button  buttonStyle='btn--outline'>BUYER</Button>}
-          {button && <Button  buttonStyle='btn--outline'>SELLER</Button>}
+          <a href='/Seller' target={'_seller'}>     
+              <button className='cart-button'>SELLER</button>
+          </a> 
+          <a href='/Seller' target={'_seller'}>     
+              <button className='cart-button'>CART</button>
+          </a> 
+       
         </div>
       </nav>
     </>
