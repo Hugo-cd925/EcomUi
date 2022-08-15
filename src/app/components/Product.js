@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 
 function Product() {
   const { id } = useParams();
-  const url = `https://localhost:7218/api/Products/${id}`;
+  const url = `https://ecomtrading.azurewebsites.net/Products/${id}`;
   const [prod, setProd] = useState(null);
   const cartFromLocalStorage = localStorage.cart
     ? JSON.parse(localStorage.getItem("cart"))
