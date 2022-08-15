@@ -11,6 +11,9 @@ import CheckoutPage from './components/CheckoutPage'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from './components/Products';
 import Footer from '../homepage/Footer';
+import Aboutus from '../homepage/pages/Aboutus';
+import Cards from '../homepage/pages/Cards';
+
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -35,6 +38,7 @@ const App = () => {
         <Route path="Seller/Info/:id" element={<EditProfile />} />
         <Route path="Checkout" element={<CheckoutPage />} />
         <Route path='Products' element={<Products/>}/>
+        <Route path='Aboutus' element={<Aboutus/>}/>
 
 
 

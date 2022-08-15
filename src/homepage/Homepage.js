@@ -1,9 +1,12 @@
 import React from "react";
-import css from "../app/App.css";
+import "../app/App.css";
 import './Homepage.css';
+import Cards from '../homepage/pages/Cards';
+
 
 const HomePage = () => {
   return (
+    <>
     <div className='container'>
       <img src="Homepage_img.jpg" alt="Homepage_img"/>
       <h1>What are you waiting for?</h1>
@@ -24,6 +27,10 @@ const HomePage = () => {
         </button>
       </div>
     </div> 
+    <div>
+    <Cards/>
+    </div>
+    </>
   );
 };
 
