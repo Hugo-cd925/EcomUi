@@ -16,6 +16,8 @@ import Product from './components/Product';
 
 
 import Footer from '../homepage/Footer';
+import Aboutus from '../homepage/pages/Aboutus';
+import Cards from '../homepage/pages/Cards';
 
 <link
   rel="stylesheet"
@@ -41,8 +43,10 @@ const App = () => {
         <Route path="Seller/Edit/:id" element={<EditProfile />} />
         <Route path="Checkout" element={<CheckoutPage />} />
         <Route path='Products' element={<Products/>}/>
-        <Route path='Categories' element={<Categories/>}/>
-        <Route path='Products/:id' element={<Product/>}/>
+        <Route path='Aboutus' element={<Aboutus/>}/>
+
+
+
       </Routes>
       {/* </Header> */}
       <Footer/>
