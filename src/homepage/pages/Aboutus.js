@@ -4,7 +4,7 @@ import './Aboutus.css';
 const Aboutus = () => {
     return (
         <>
-          <img src="Homepage_img.jpg" alt="Homepage_img"/>
+          <img className="baseimg" src="Homepage_img.jpg" alt="Homepage_img"/>
             <h1 className="aboutus-title">About Us</h1>
          
 <div className="team-list">

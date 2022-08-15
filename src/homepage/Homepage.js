@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <>
       <div className={Styles.container}>
-        <img src="Homepage_img.jpg" alt="Homepage_img" />
+        <img className={Styles.homeimg} src="Homepage_img.jpg" alt="Homepage_img" />
         <h1>What are you waiting for?</h1>
         <div className='hero-btns'>
           <button
