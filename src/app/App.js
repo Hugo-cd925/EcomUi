@@ -17,6 +17,7 @@ import Cart from './components/Cart';
 
 
 import Footer from '../homepage/Footer';
+import Success from './components/Success';
 
 <link
   rel="stylesheet"
@@ -45,6 +46,7 @@ const App = () => {
         <Route path='Categories' element={<Categories/>}/>
         <Route path='Products/:id' element={<Product/>}/>
         <Route path='Cart' element={<Cart />}/>
+        <Route path='Success' element={<Success />}/>
       </Routes>
       {/* </Header> */}
       <Footer/>
