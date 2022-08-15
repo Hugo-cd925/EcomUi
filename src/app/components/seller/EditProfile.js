@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import { getUserByEmail, updateUser } from './SellerService';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+
 const EditProfile = () => {
     const [apiError, setApiError] = useState(false);
 

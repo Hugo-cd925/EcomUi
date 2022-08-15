@@ -17,7 +17,7 @@ const SellerPage = () => {
     //store local storage after user logs in to use to updates
     //googleUser or context api
     const googleUser = JSON.parse(window.sessionStorage.getItem("user"));
-
+    
     useEffect(() => {
 
         getUserByEmail(googleUser?.email, setUser, setApiError);
