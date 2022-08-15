@@ -14,10 +14,10 @@ import Products from './components/Products';
 import Categories from './components/Categories';
 import Product from './components/Product';
 import Cart from './components/Cart';
+import Success from './components/Success';
 
 
 import Footer from '../homepage/Footer';
-import Success from './components/Success';
 
 <link
   rel="stylesheet"

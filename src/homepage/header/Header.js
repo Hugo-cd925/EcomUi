@@ -62,6 +62,15 @@ function Header() {
             </li>
             <li className='nav-item'>
               <Link
+                to='/Aboutus'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                About us
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
                 to='/products'
                 className='nav-links'
                 onClick={closeMobileMenu}
