@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { getUserByEmail } from './SellerService';
 import Constants from '../../../ultil/Constants';
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 
 const SellerPage = () => {
@@ -41,7 +41,7 @@ const SellerPage = () => {
 
 
     };
-    
+
     /**
       * @name handleProfile
       * @Description Navigates user to specified route
@@ -52,39 +52,41 @@ const SellerPage = () => {
 
     return (
         <>
-          
-                {apiError && (
-                    <p data-testid="errMsg">
-                        {Constants.API_ERROR}
-                    </p>
-                )}
 
+            {apiError && (
+                <p data-testid="errMsg">
+                    {Constants.API_ERROR}
+                </p>
+            )}
+
+            <div>
                 <div>
-                    SellerPage
-                    <div>
-                        {/* {user && user.map((obj) => (
-                <div>{obj.FirstName}</div>
-               ))} */}
-               <h1>   {user?.firstName}</h1>
-                     
 
-                    </div>
+                    <h1>   {user?.firstName}</h1>
+                </div>
+                <Container>
+                    <Row>
+                        <Col>
                     <div>
                         <Button onClick={HandleCreate}>Create Product</Button>
-                        <button
-                            onClick={HandleCreate}
-                        >Post Product</button>
+                       
                     </div>
-
+                    </Col>
+                    <Col>
                     <div>
                         <Button type='button' onClick={() =>
-                           handleProfile(user.id)
+                            handleProfile(user.id)
                         }>Edit Profile</Button>
 
                     </div>
+                    </Col>
+                    </Row>
+                  
+                </Container>
 
-                </div>
-        
+
+            </div>
+
         </>
     )
 }
