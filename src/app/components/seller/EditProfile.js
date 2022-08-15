@@ -4,7 +4,7 @@ import FormItemDropdown from '../forms/SelectForm';
 import usStates from '../forms/State';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { getUserByEmail } from './SellerService';
+import { getUserByEmail, updateUser } from './SellerService';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 const EditProfile = () => {
@@ -26,7 +26,7 @@ const EditProfile = () => {
     useEffect(() => {
 
         getUserByEmail(googleUser?.email, setUser, setApiError);
-    }, [user]);
+    }, []);
 
     const [errors, setErrors] = useState({
         streetAddress: '',
@@ -38,10 +38,12 @@ const EditProfile = () => {
 
     });
 
-    const sendProfile = () => {
+    const sendProfile = (e) => {
+        e.preventDefault();
         console.log(user);
-
-        //PutUser(setUser, id, setApiError)
+     
+        
+        updateUser(user, user.id, setApiError)
     };
 
     const nav = useNavigate();
@@ -61,7 +63,7 @@ const EditProfile = () => {
                 <Row>
                     <Form.Group className="mb-3" controlId="streetAddress">
                         <Form.Label>Address</Form.Label>
-                        <Form.Control onChange={onChange} type="text" placeholder="1234 Main" />
+                        <Form.Control onChange={onChange} value={user?.streetAddress} type="text" placeholder="1234 Main" />
                         <Form.Text className="text-muted">
                             We'll never share your information with anyone else.
                         </Form.Text>
@@ -69,26 +71,27 @@ const EditProfile = () => {
                 </Row>
                 <Row>
                     <Form.Group className="mb-3" controlId="streetAddress2">
-                        <Form.Label>Address</Form.Label>
-                        <Form.Control onChange={onChange} type="text" placeholder="apt .." />
+                        <Form.Label>Address 2</Form.Label>
+                        <Form.Control onChange={onChange} value={user?.streetAddress2} type="text" placeholder="apt .." />
                     </Form.Group>
                 </Row>
                 <Row>
                     <Col>
                         <Form.Group className="mb-3" controlId="state">
                             <Form.Label>State</Form.Label>
-                            <Form.Control onChange={onChange} type="text" placeholder="CA" />
-                        </Form.Group></Col>
+                            <Form.Control onChange={onChange} value={user?.state} type="text" placeholder="CA" />
+                        </Form.Group>
+                        </Col>
                     <Col>
                         <Form.Group className="mb-3" controlId="zipCode">
                             <Form.Label>Zip Code</Form.Label>
-                            <Form.Control onChange={onChange} type="text" placeholder="90210" />
+                            <Form.Control onChange={onChange} value={user?.zipCode} type="text" placeholder="90210" />
                         </Form.Group>
                     </Col>
                     <Row>
                         <Form.Group className="mb-3" controlId="phoneNumber">
                             <Form.Label>Phone:</Form.Label>
-                            <Form.Control onChange={onChange} type="text" placeholder="(xxx) xxx--xxxx" />
+                            <Form.Control onChange={onChange} value={user?.phoneNumber} type="text" placeholder="(xxx) xxx--xxxx" />
                         </Form.Group>
                     </Row>
                 </Row>
@@ -96,7 +99,7 @@ const EditProfile = () => {
 
 
                 <Row>
-
+                
                     <Button onClick={sendProfile} variant="primary" type="submit">
                         Update
                     </Button>

@@ -10,7 +10,7 @@ const PostProduct = () => {
 
   const [product, setProduct] = useState({
     name: '',
-    active: true,
+    active: false,
     price: 0,
     description: '',
     img: '',
@@ -22,6 +22,12 @@ const PostProduct = () => {
 
   const onChange = (e) => {
     setProduct({ ...product, [e.target.id]: e.target.value });
+  };
+
+  const handleClick=()=>{
+   
+    setProduct({...product, active: true})
+    console.log(product);
   };
 
   const sendProduct = () => {
@@ -69,7 +75,7 @@ const PostProduct = () => {
         </Row>
         <Row>
         <Col>   <Form.Group className="mb-3" controlId="active">
-        <Form.Check type="checkbox" label="Active?" />
+        <Form.Check onClick={handleClick} type="checkbox" label="Active?" />
         {/* <Form.Control onChange={setActive} /> */}
       </Form.Group>
         
