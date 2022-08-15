@@ -23,7 +23,7 @@ const Aboutus = () => {
                         </div>
                     <h3>Raul Boulocq</h3>
                         <p className="role">GenSpark Trainee</p>
-                        <p>description</p>
+                        <p>Technical Skills: C#, React, Javascript, CSS, HTML</p>
                     </div>
                     <div className="team_member">
                     <div className="team-img">
@@ -31,7 +31,7 @@ const Aboutus = () => {
                         </div>
                     <h3>Hugo Calderon</h3>
                         <p className="role">GenSpark Trainee</p>
-                        <p>description</p>
+                        <p>Technical Skills: C#, React, Javascript, CSS, HTML</p>
                     </div>
                     <div className="team_member">
                     <div className="team-img">
@@ -39,7 +39,7 @@ const Aboutus = () => {
                         </div>
                     <h3>Saber Butt</h3>
                         <p className="role">GenSpark Trainee</p>
-                        <p>description</p>
+                        <p>Technical Skills: C#, React, Javascript, CSS, HTML</p>
                     </div>
                 </div>
                 </div>
