@@ -69,15 +69,7 @@ function Header() {
                 About us
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link
-                to='/Checkout'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Cart
-              </Link>
-            </li>
+        
             <li className='nav-item'>
               <Link
                 to='/products'
@@ -95,7 +87,6 @@ function Header() {
                 onClick={closeMobileMenu}
               >
                 Cart
-               
               </Link>
               </li>
            

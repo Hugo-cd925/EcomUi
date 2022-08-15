@@ -15,7 +15,7 @@ import Categories from './components/Categories';
 import Product from './components/Product';
 import Cart from './components/Cart';
 import Success from './components/Success';
-
+import Aboutus from '../homepage/pages/Aboutus';
 
 import Footer from '../homepage/Footer';
 

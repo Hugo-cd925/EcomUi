@@ -4,20 +4,30 @@ import FormItemDropdown from '../forms/SelectForm';
 import usStates from '../forms/State';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { getUserByEmail } from './SellerService';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 const EditProfile = () => {
+    const [apiError, setApiError] = useState(false);
 
     const [user, setUser] = useState({
+        role: 'Seller',
         streetAddress: '',
         streetAddress2: '',
         city: '',
         state: '',
         zipCode: '',
         phoneNumber: '',
+       
 
     });
-    
+    const googleUser = JSON.parse(window.sessionStorage.getItem("user"));
+
+    useEffect(() => {
+
+        getUserByEmail(googleUser?.email, setUser, setApiError);
+    }, [user]);
+
     const [errors, setErrors] = useState({
         streetAddress: '',
         streetAddress2: '',
@@ -67,18 +77,18 @@ const EditProfile = () => {
                     <Col>
                         <Form.Group className="mb-3" controlId="state">
                             <Form.Label>State</Form.Label>
-                            <Form.Control onChange={onChange} type="email" placeholder="CA" />
+                            <Form.Control onChange={onChange} type="text" placeholder="CA" />
                         </Form.Group></Col>
                     <Col>
                         <Form.Group className="mb-3" controlId="zipCode">
-                            <Form.Label>State</Form.Label>
-                            <Form.Control onChange={onChange} type="email" placeholder="CA" />
+                            <Form.Label>Zip Code</Form.Label>
+                            <Form.Control onChange={onChange} type="text" placeholder="90210" />
                         </Form.Group>
                     </Col>
                     <Row>
                         <Form.Group className="mb-3" controlId="phoneNumber">
                             <Form.Label>Phone:</Form.Label>
-                            <Form.Control onChange={onChange} type="email" placeholder="(xxx) xxx--xxxx" />
+                            <Form.Control onChange={onChange} type="text" placeholder="(xxx) xxx--xxxx" />
                         </Form.Group>
                     </Row>
                 </Row>
