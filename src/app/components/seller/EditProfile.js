@@ -48,6 +48,7 @@ const EditProfile = () => {
     };
 
     const nav = useNavigate();
+    
     const cancelProfile = () => {
         nav('Seller');
     }

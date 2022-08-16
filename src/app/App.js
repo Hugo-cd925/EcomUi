@@ -10,7 +10,7 @@ import CheckoutPage from './components/CheckoutPage'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from './components/Products';
-
+import ProductList from './components/seller/ProductList';
 import Categories from './components/Categories';
 import Product from './components/Product';
 import Cart from './components/Cart';
@@ -42,6 +42,7 @@ const App = () => {
         <Route path="Seller" element={<SellerPage />} />
         <Route path="Seller/Post" element={<PostProduct />} />
         <Route path="Seller/Edit/:id" element={<EditProfile />} />
+        <Route path='Seller/Products' element={<ProductList />} />
         <Route path="Checkout" element={<CheckoutPage />} />
         <Route path='Products' element={<Products/>}/>
         <Route path='Categories' element={<Categories/>}/>

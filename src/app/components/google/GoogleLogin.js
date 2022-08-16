@@ -3,7 +3,7 @@ import jwt_decode from 'jwt-decode';
 import { loginUser} from '../seller/SellerService';
 
 const GoogleLogin = ({ setLoggedIn }) => {
-
+   /*global google*/
     const [user, setUser] = useState({});
     const [apiError, setApiError] = useState(false);
 
@@ -26,8 +26,9 @@ const GoogleLogin = ({ setLoggedIn }) => {
         sessionStorage.setItem('user', JSON.stringify(googleUser));
        
     };
+    
     useEffect(() => {
-            /*global google*/
+           
             google.accounts.id.initialize({
               client_id: "575948866004-i0lapgehq080re6t6rkesqmln6knlhl9.apps.googleusercontent.com",
               callback : handleCallbackResponse

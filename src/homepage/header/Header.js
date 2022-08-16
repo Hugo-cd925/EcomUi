@@ -30,6 +30,9 @@ function Header() {
     nav('/Seller');
     console.log('hit');
   };
+  const sendCart =()=>{
+    nav('/Cart');
+  };
   return (
 
     <>
@@ -71,12 +74,13 @@ function Header() {
   </ul> 
 
           <GoogleLogin setLoggedIn={setLoggedIn} />
-          <a href='/Seller' target={'_seller'}>     
-              <button className='cart-button'>SELLER</button>
-          </a> 
-          <a href='/cart' target={'_seller'}>     
-              <button className='cart-button'>CART</button>
-          </a> 
+
+         
+              <button onClick={sendSeller} className='cart-button'>SELLER</button>
+          
+           
+              <button onClick={sendCart} className='cart-button'>CART</button>
+          
        
         </div>
       </nav>

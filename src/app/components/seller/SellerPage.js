@@ -8,26 +8,25 @@ import Button from 'react-bootstrap/Button';
 
 const SellerPage = () => {
 
-    //const [user, setUser] = useAtom(googleUser);
-
     const [user, setUser] = useState({});
     const [apiError, setApiError] = useState(false);
-    // console.log(window.sessionStorage.getItem("loggedIn"));
 
-    //store local storage after user logs in to use to updates
-    //googleUser or context api
     const googleUser = JSON.parse(window.sessionStorage.getItem("user"));
-    
-    useEffect(() => {
-
-        getUserByEmail(googleUser?.email, setUser, setApiError);
-
-        //fetchUserById(setUser, googleUser., setApiError);
-        // getGoogleUser(setUser);
-        // fetchUsers(setUser, setApiError);
-    }, [user]);
+    const loggedIn = JSON.parse(window.sessionStorage.getItem('loggedIn'));  
 
     const Navigate = useNavigate();
+
+    useEffect(() => {
+        if (loggedIn === null ){
+           return Navigate("/SignIn");
+        }
+     },[loggedIn]);
+
+    useEffect(() => {
+        getUserByEmail(googleUser?.email, setUser, setApiError);
+    }, [user]);
+   
+     
 
     /**
      * @name HandleCreate
@@ -35,11 +34,7 @@ const SellerPage = () => {
      */
     const HandleCreate = () => {
         Navigate('/Seller/Post');
-        //{googleUser.firstName + ' ' + googleUser.lastName}
-        //console.log(window.sessionStorage.getItem("loggedIn"));
-        //console.log(window.sessionStorage.getItem("user"));
-
-
+       
     };
 
     /**
@@ -48,6 +43,11 @@ const SellerPage = () => {
       */
     const handleProfile = (id) => {
         Navigate(`/Seller/Edit/${id}`);
+        
+    };
+
+    const HandleListedProduct =()=>{
+        Navigate('Seller/Products');
     };
 
     return (
@@ -58,7 +58,8 @@ const SellerPage = () => {
                     {Constants.API_ERROR}
                 </p>
             )}
-
+            
+            
             <div>
                 <div>
 
@@ -71,6 +72,11 @@ const SellerPage = () => {
                         <Button onClick={HandleCreate}>Create Product</Button>
                        
                     </div>
+                    </Col>
+                    <Col>
+                    {/* <Button type="button" onClick={HandleListedProduct} >
+                        Listed Products
+                    </Button> */}
                     </Col>
                     <Col>
                     <div>
