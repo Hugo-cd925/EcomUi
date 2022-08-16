@@ -12,9 +12,9 @@ function Products() {
   }, [url]);
   if (products) {
     return (
-      <div className="container mt-2 mb-1">
+      <div className="container my-5">
         <h1 className="m-5 text-center">Products Page</h1>
-        <div className="row mt-5">
+        <div className="row mt-5 pt-4">
           {products.map((prod, index) => {
             return (
               <div 
@@ -32,7 +32,7 @@ function Products() {
                         alt={`Picture of ${prod.name}`}
                     />
                     </div>
-                        <div className="mt-3">{prod.name}</div>
+                        <div className="mt-3 fw-bold">{prod.name}</div>
                   </a>
                   <div className="d-flex justify-content-center align-items-center-center">${prod.price}</div>
               </div>
@@ -44,6 +44,7 @@ function Products() {
   }
   return <>
               <h1 className="m-5 text-center">Products Page</h1>
+              <h3>No Products to load!</h3>
 
       </>;
 }

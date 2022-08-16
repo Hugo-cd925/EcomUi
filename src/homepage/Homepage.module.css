@@ -10,6 +10,10 @@
   object-fit: contain;
 }
 
+.container h1{
+  font-size: 75px;
+}
+
 .btns {
     padding: 10px 30px;
     border-radius: 2px;
@@ -21,7 +25,7 @@
     transition: all 0.3s ease-out;
   font-size: 20px;
 } 
-img {
+.homeimg {
   object-fit: cover;
   position: fixed;
   z-index: -1;

@@ -10,6 +10,23 @@
   z-index: 999;
 }
 
+.cart-button {
+  background-color: #242222;
+  color: #fff;
+  padding: 8px 20px;
+  margin: 0 10px;
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease-out;
+  border-radius: 5px;
+}
+
+.cart-button:hover{
+  transition: all 0.3s ease-out;
+  background: #fff;
+  color: #242424;
+  transition: 250ms;
+}
+
 .navbar-container {
   display: flex;
   justify-content: center;
@@ -27,6 +44,7 @@
   font-size: 2rem;
   display: flex;
   align-items: center;
+  font: Open Sans;
 }
 
 .fa-typo3 {
@@ -155,4 +173,4 @@
     color: #242424;
     transition: 250ms;
   }
-} */
+}

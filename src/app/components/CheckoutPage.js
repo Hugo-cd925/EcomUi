@@ -1,7 +1,18 @@
-import React from 'react';
+import React from 'react'
+import {useNavigate} from 'react-router-dom'
 
 function CheckoutPage() {
-  return (
+  const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart'));
+  const priceArr = [];
+  priceArr.push(cartFromLocalStorage.map(item=>item.price));
+  let grandTotal = 0;
+  priceArr[0].map(i=>grandTotal+=i);
+  const navigate = useNavigate();
+  const toSuccess = () =>{
+    localStorage.clear();
+    navigate('/success');
+}
+    return (
     <div>
         <div className='py-2 bg-info'>
             <div className='container'>
@@ -23,36 +34,36 @@ function CheckoutPage() {
                                 <h5>Basic Information</h5>
                             </div>
                             <div className='card-body'>
-
+                                <form>
                                 <div className='row'>
                                     <div className='col-md-6'>
                                         <div className='form-group mb-3'>
                                             <label>First Name</label>
-                                            <input type="text" name='FirstName' className='form-control'/>
+                                            <input type="text" name='FirstName' className='form-control' required/>
                                         </div>
                                     </div>
                                     <div className='col-md-6'>
                                         <div className='form-group mb-3'>
                                             <label>Last Name</label>
-                                            <input type="text" name='LastName' className='form-control'/>
+                                            <input type="text" name='LastName' className='form-control' required/>
                                         </div>
                                     </div>
                                     <div className='col-md-6'>
                                         <div className='form-group mb-3'>
                                             <label>Phone Number</label>
-                                            <input type="text" name='PhoneNumber' className='form-control'/>
+                                            <input type="text" name='PhoneNumber' className='form-control' required/>
                                         </div>
                                     </div>
                                     <div className='col-md-6'>
                                         <div className='form-group mb-3'>
                                             <label>Email Address</label>
-                                            <input type="email" name='Email' className='form-control'/>
+                                            <input type="email" name='Email' className='form-control' required/>
                                         </div>
                                     </div>
                                     <div className='col-md-12'>
                                         <div className='form-group mb-3'>
                                             <label>Street Address</label>
-                                            <input type="text" name='StreetAddress' className='form-control'/>
+                                            <input type="text" name='StreetAddress' className='form-control' required/>
                                         </div>
                                     </div>
                                     <div className='col-md-4'>
@@ -79,34 +90,35 @@ function CheckoutPage() {
                                             <div className='col-md-12'>
                                                 <div className='form-group mb-3'>
                                                     <label>Card Holder Name</label>
-                                                    <input type="text" name='CardHolder' className='form-control'/>
+                                                    <input type="text" name='CardHolder' className='form-control' required/>
                                                 </div>
                                             </div>
                                             <div className='col-md-8'>
                                                 <div className='form-group mb-3'>
                                                     <label>Credit Card Number</label>
-                                                    <input type="text" name='CardNumber' className='form-control'/>
+                                                    <input type="text" name='CardNumber' className='form-control' required/>
                                                 </div>
                                             </div>
                                             <div className='col-md-2'>
                                                 <div className='form-group mb-3'>
                                                     <label>Expiration</label>
-                                                    <input type="text" name='CardNumber' className='form-control'/>
+                                                    <input type="text" name='CardNumber' className='form-control' required/>
                                                 </div>
                                             </div>
                                             <div className='col-md-2'>
                                                 <div className='form-group mb-3'>
                                                     <label>CVV</label>
-                                                    <input type="text" name='CVV' className='form-control'/>
+                                                    <input min="3" max="3" type="text" name='CVV' className='form-control' required/>
                                                 </div>
                                             </div>
                                             <div className='col-md-12'>
                                                 <div className='form-group text-end'>
-                                                <button type='button' className='btn btn-primary'>Place Order</button>
+                                                <button onClick={toSuccess} type='submit' className='btn btn-primary'>Place Order</button>
                                                 </div>
                                             </div>
                                         </div>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -115,22 +127,22 @@ function CheckoutPage() {
                         <table className='table table-border'>
                             <thead>
                                 <tr>
-                                    <th width="50%">Product</th>
+                                    <th >Product</th>
                                     <th >Price</th>
-                                    <th >Qty</th>
-                                    <th>Total</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
+                                {cartFromLocalStorage.map(item=>
+                                    <tr key={item.id}>
+                                        <td>{item.name}</td>
+                                        <td>{item.price}</td>
+                                        
+                                    </tr>
+                                )}
                                 <tr>
-                                    <td>Shampoo</td>
-                                    <td>8.99</td>
-                                    <td>2</td>
-                                    <td>17.98</td>
-                                </tr>
-                                <tr>
-                                    <td colSpan="2" className='text-end fw-bold'>Grand Total</td>
-                                    <td colSpan="2" className='text-end fw-bold'>$17.98</td>
+                                    <td colSpan="" className='fw-bold'>Grand Total</td>
+                                    <td colSpan="2" className='fw-bold'>{grandTotal}</td>
                                 </tr>
                             </tbody>
                         </table>

@@ -1,0 +1,51 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background:#fff;
+}
+.aboutus-wrapper {
+    margin-top: 10%;
+}
+
+.aboutus-wrapper h1{
+    font-size: 52px;
+    margin-bottom: 60px;
+    text-align: center;
+    color: black;
+}
+
+.team{
+    display: flex;
+    text-align: center;
+    width: auto;
+    justify-content: center;
+}
+
+.team_member{
+    background-color: black;
+    margin: 5px;
+    margin-bottom: 50px;
+    width: 300px;
+    padding:20px;
+    line-height:20px;
+    color:#8e8b8b;
+    position: relative;
+    border-radius: 5px;
+}
+
+.team_member h3{
+    color: #81c644;
+    font-size: 26px;
+    margin-top: 50px;
+}
+
+.role{
+    color: #ccc;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin:12px 0
+}

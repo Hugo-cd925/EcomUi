@@ -14,7 +14,9 @@ import Products from './components/Products';
 import Categories from './components/Categories';
 import Product from './components/Product';
 import Cart from './components/Cart';
-
+import Success from './components/Success';
+import Aboutus from '../homepage/pages/Aboutus';
+import SignIn from '../homepage/pages/SignIn';
 
 import Footer from '../homepage/Footer';
 
@@ -45,6 +47,9 @@ const App = () => {
         <Route path='Categories' element={<Categories/>}/>
         <Route path='Products/:id' element={<Product/>}/>
         <Route path='Cart' element={<Cart />}/>
+        <Route path='Success' element={<Success />}/>
+        <Route path='Aboutus' element={<Aboutus/>}/>
+        <Route path='SignIn' element={<SignIn/>}/>
       </Routes>
       {/* </Header> */}
       <Footer/>
