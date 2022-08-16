@@ -1,28 +1,28 @@
-import {useEffect} from 'react'
+// import {useEffect} from 'react'
 
-import { Container, Row, Col } from 'react-bootstrap';
+// import { Container, Row, Col } from 'react-bootstrap';
 
-const ProductList = () => {
+// const ProductList = () => {
 
-    const googleUser = JSON.parse(window.sessionStorage.getItem("user"));
+//     const googleUser = JSON.parse(window.sessionStorage.getItem("user"));
 
-    useEffect(() => {
+//     useEffect(() => {
         
-        getUserByEmail(googleUser?.email, setUser, setApiError);
-    }, [user]);
+//         getUserByEmail(googleUser?.email, setUser, setApiError);
+//     }, [user]);
 
-  return (
-    <>
-    <Container>
-    <div>ProductList</div>
+//   return (
+//     <>
+//     <Container>
+//     <div>ProductList</div>
 
-    <Row>Active Product(s)</Row>
-    <Row></Row>
-    </Container>
+//     <Row>Active Product(s)</Row>
+//     <Row></Row>
+//     </Container>
      
 
-    </>
-  )
-}
+//     </>
+//   )
+// }
 
-export default ProductList
+// export default ProductList
