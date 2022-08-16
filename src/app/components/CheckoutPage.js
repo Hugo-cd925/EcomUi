@@ -9,6 +9,7 @@ function CheckoutPage() {
   priceArr[0].map(i=>grandTotal+=i);
   const navigate = useNavigate();
   const toSuccess = () =>{
+    localStorage.clear();
     navigate('/success');
 }
     return (

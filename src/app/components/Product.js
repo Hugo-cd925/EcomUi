@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Delete from "./Delete";
 
 function Product() {
   const { id } = useParams();
@@ -35,7 +36,7 @@ function Product() {
       <div>
         <Container>
           <div
-            className="card mt-5 col-8 offset-3"
+            className="card my-5 col-8 offset-3"
             style={{ width: "50%" }}
           >
             <img style={{ width: "50%" }} src={prod.img} class="card-img-top offset-3 fluid mt-4" alt={prod.name} />
@@ -49,7 +50,8 @@ function Product() {
               <li class="list-group-item">${prod.price}</li>
             </ul>
             <div class="card-body">
-            <button className="btn btn-primary offset-9" onClick={() => addtoCart(prod)}>Add to cart</button>
+            <button className="btn btn-primary" sylte={{width:"20%"}} onClick={() => addtoCart(prod)}>Add to cart</button>
+            <Delete prodId={prod.id}/>
             </div>
           </div>
         </Container>
