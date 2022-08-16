@@ -16,6 +16,8 @@ function Product() {
 
   const [cart, setCart] = useState(cartFromLocalStorage);
 
+  const googleUser = JSON.parse(window.sessionStorage.getItem("user"));
+
   const addtoCart = (p) => {
     console.log("we are in addToCart");
     setCart([...cart, { ...p }]);
@@ -51,7 +53,7 @@ function Product() {
             </ul>
             <div class="card-body">
             <button className="btn btn-primary" sylte={{width:"20%"}} onClick={() => addtoCart(prod)}>Add to cart</button>
-            <Delete prodId={prod.id}/>
+            {prod.sellerEmail === googleUser.email ? <Delete prodId={prod.id}/>:null }
             </div>
           </div>
         </Container>
