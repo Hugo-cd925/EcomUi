@@ -9,7 +9,8 @@ function Products() {
     axios.get(url).then((response) => {
       setProducts(response.data);
     });
-  }, [url]);
+  }, [products]);
+
   if (products) {
     return (
       <div className="container my-5">
