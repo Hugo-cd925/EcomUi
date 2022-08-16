@@ -1,0 +1,25 @@
+.box {
+    color: #fff;
+      height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+
+}
+
+  .box h1{
+    font-size: 75px;
+  }
+
+  .account{
+    text-align: center;
+    width: auto;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid;
+    margin: 10px 83px;
+}

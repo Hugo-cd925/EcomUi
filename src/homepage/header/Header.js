@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from '../Button';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import GoogleLogin from '../../app/components/google/GoogleLogin';
@@ -33,7 +32,6 @@ function Header() {
   };
   return (
 
-
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
@@ -46,18 +44,9 @@ function Header() {
 
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            {/* <li className='nav-item'>
+            <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                 Home
-              </Link>
-            </li> */}
-            <li className='nav-item'>
-              <Link
-                to='/Seller'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Seller
               </Link>
             </li>
             <li className='nav-item'>
@@ -79,40 +68,16 @@ function Header() {
                 Products
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link
-                to='/cart'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Cart
-              </Link>
-            </li>
-            {/* 
-            <li>
-              <Link
-                to='/sign-up'
-                className='nav-links-mobile'
-                onClick={closeMobileMenu}
-              >
-                Cart
-              </Link>
-  </li> 
-            <li>
-              <Link
-                to='/Seller'
-                className='nav-links-mobile'
-                onClick={closeMobileMenu}
-              >
-                Seller
-              </Link>
-            </li> 
-            */}
   </ul> 
 
           <GoogleLogin setLoggedIn={setLoggedIn} />
-          {button && <Button  buttonStyle='btn--outline'>BUYER</Button>}
-          {button && <Button  buttonStyle='btn--outline'>SELLER</Button>}
+          <a href='/Seller' target={'_seller'}>     
+              <button className='cart-button'>SELLER</button>
+          </a> 
+          <a href='/cart' target={'_seller'}>     
+              <button className='cart-button'>CART</button>
+          </a> 
+       
         </div>
       </nav>
     </>

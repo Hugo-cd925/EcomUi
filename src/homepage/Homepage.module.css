@@ -10,6 +10,10 @@
   object-fit: contain;
 }
 
+.container h1{
+  font-size: 75px;
+}
+
 .btns {
     padding: 10px 30px;
     border-radius: 2px;
