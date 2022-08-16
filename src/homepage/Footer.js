@@ -10,8 +10,8 @@ function Footer() {
         <p className='footer-subscription-heading'>
           Buy amazing products posted by our everyday users!
         </p>
-      
-        <div className='input-areas'>
+        <small class='website-rights'>TRADE © 2022</small>
+        {/* <div className='input-areas'>
           <form>
             
           </form>
@@ -103,7 +103,7 @@ function Footer() {
               <i class='fab fa-linkedin' />
             </Link>
           </div>
-        </div>
+        </div> */}
       </section>
     </div>
   );
