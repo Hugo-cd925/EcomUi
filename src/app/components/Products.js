@@ -12,9 +12,9 @@ function Products() {
   }, [url]);
   if (products) {
     return (
-      <div className="container mt-2 mb-1">
+      <div className="container my-5">
         <h1 className="m-5 text-center">Products Page</h1>
-        <div className="row mt-5">
+        <div className="row mt-5 pt-4">
           {products.map((prod, index) => {
             return (
               <div 
