@@ -8,7 +8,7 @@ import Delete from "./Delete";
 
 function Product() {
   const { id } = useParams();
-  const url = `https://ecomtrading.azurewebsites.net/Products/GetById/${id}`;
+  const url = `https://localhost:7218/Products/GetById/${id}`;
   const [prod, setProd] = useState(null);
   const cartFromLocalStorage = localStorage.cart
     ? JSON.parse(localStorage.getItem("cart"))
@@ -53,7 +53,7 @@ function Product() {
             </ul>
             <div class="card-body">
             <button className="btn btn-primary" sylte={{width:"20%"}} onClick={() => addtoCart(prod)}>Add to cart</button>
-            {prod.sellerEmail === googleUser.email ? <Delete prodId={prod.id}/>:null }
+            {prod.sellerEmail === googleUser?.email ? <Delete prodId={prod.id}/>:null }
             </div>
           </div>
         </Container>

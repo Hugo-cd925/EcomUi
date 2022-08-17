@@ -8,19 +8,35 @@ const ProductList = () => {
     const googleUser = JSON.parse(window.sessionStorage.getItem("user"));
         const [products, setProducts] = useState({});
         const  [apiError, setApiError] = useState(false);
+
     useEffect(() => {
         
         getProductbyEmail(setProducts, googleUser?.email, setApiError);
-    }, [products]);
+    
+    }, []);
+
     const checkProduct=()=>{
         console.log(products);
         console.log(products[0]);
         console.log(products[0].name);
     };
+    console.log(products);
+    const column = [
+        { heading:'ID', value:'id' },
+        { heading:'Name', value:'name' },
+        { heading:'Description', value:'description'},
+        {heading:'Active', value:'active'},
+        {heading:'Price', value:'price'},
+        {heading:'Image', value:'img'}
+    ]
   return (
     <>
-   <ProductTable props={products}/>
-    <Button onClick={checkProduct} >Check</Button>
+    <h1>Your Products</h1>
+   <ProductTable prodList={products} column={column} />
+   <div>
+   <Button onClick={checkProduct} >Check</Button>
+
+   </div>
      </>
   )
 }

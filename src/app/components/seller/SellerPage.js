@@ -22,13 +22,14 @@ const SellerPage = () => {
         Navigate('/SignIn');
    }
   }, [loggedIn]);
+
   useEffect(() => {
     getUserByEmail(googleUser?.email, setUser, setApiError);
 
     //fetchUserById(setUser, googleUser., setApiError);
     // getGoogleUser(setUser);
     // fetchUsers(setUser, setApiError);
-  }, [user]);
+  }, []);
 
 
     /**
