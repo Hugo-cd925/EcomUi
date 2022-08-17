@@ -19,7 +19,7 @@ const ProductList = () => {
     };
   return (
     <>
-   <ProductTable props={products}/>
+   <ProductTable prodList={products}/>
     <Button onClick={checkProduct} >Check</Button>
      </>
   )
