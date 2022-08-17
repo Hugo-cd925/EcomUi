@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Delete from "./Delete";
+import EditButton from "./EditButton";
 
 function Product() {
   const { id } = useParams();
@@ -52,7 +53,7 @@ function Product() {
               <li class="list-group-item">${prod.price}</li>
             </ul>
             <div class="card-body">
-            <button className="btn btn-primary" sylte={{width:"20%"}} onClick={() => addtoCart(prod)}>Add to cart</button>
+            <button className="btn btn-primary me-3" sylte={{width:"20%"}} onClick={() => addtoCart(prod)}>Add to cart</button>
             {googleUser && prod.sellerEmail === googleUser.email ? <Delete prodId={prod.id}/>:null }
             </div>
           </div>
