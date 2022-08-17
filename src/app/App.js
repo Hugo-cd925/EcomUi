@@ -19,6 +19,7 @@ import Aboutus from '../homepage/pages/Aboutus';
 import SignIn from '../homepage/pages/SignIn';
 
 import Footer from '../homepage/Footer';
+import Edit from './components/Edit';
 
 <link
   rel="stylesheet"
@@ -51,6 +52,7 @@ const App = () => {
         <Route path='Success' element={<Success />}/>
         <Route path='Aboutus' element={<Aboutus/>}/>
         <Route path='SignIn' element={<SignIn/>}/>
+        <Route path='Edit/:id' element={<Edit/>}/>
       </Routes>
       {/* </Header> */}
       <Footer/>

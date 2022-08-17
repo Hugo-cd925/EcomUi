@@ -20,7 +20,7 @@ function Products() {
             return (
               <div 
               key={index}
-              className="col-md-3">
+              className="col-md-3 my-5">
                   <a
                     href={`/products/${prod.id}`}
                     className="text-decoration-none text-dark text-center"
@@ -30,7 +30,7 @@ function Products() {
                         className="mx-auto"
                         style={{ width: "65%" }}
                         src={prod.img}
-                        alt={`Picture of ${prod.name}`}
+                        alt={`${prod.name}`}
                     />
                     </div>
                         <div className="mt-3 fw-bold">{prod.name}</div>
