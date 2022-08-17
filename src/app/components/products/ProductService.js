@@ -3,10 +3,9 @@ import constants from '../../../ultil/Constants';
 
 
 /**
- * @name createUser
- * @description Posts a user to the backend
- * @param {Object} user The user to create
- * @param {Function} setUser Sets the user state
+ * @name createProduct
+ * @description Posts a product obj to the backend
+ * @param {Object} Product The Product to create
  * @param {Function} setApiError Sets the API Error state
  */
  export async function createProduct(product, setApiError)  {
@@ -25,4 +24,16 @@ import constants from '../../../ultil/Constants';
         })
 };
 
+export async function getProductbyEmail(setProduct,email, setApiError) {
+    await HttpHelper(`${constants.PRODUCT_ENDPOINT}/${email}`, 'GET')
+    .then((response) => {
+        return response.json();
+    })
+    .then((data)=>{
+        setProduct(data);
+    })
+    .catch(() => {
+        setApiError(true);
+    })
+};
     

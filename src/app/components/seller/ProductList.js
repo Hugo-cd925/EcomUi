@@ -1,29 +1,28 @@
-// import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
+import { getProductbyEmail } from '../products/ProductService';
+import { Table, Button } from 'react-bootstrap';
+import ProductTable from './ProductTable';
 
-// import { Container, Row, Col } from 'react-bootstrap';
+const ProductList = () => {
 
-// const ProductList = () => {
-
-//     const googleUser = JSON.parse(window.sessionStorage.getItem("user"));
-
-//     useEffect(() => {
+    const googleUser = JSON.parse(window.sessionStorage.getItem("user"));
+        const [products, setProducts] = useState({});
+        const  [apiError, setApiError] = useState(false);
+    useEffect(() => {
         
-//         getUserByEmail(googleUser?.email, setUser, setApiError);
-//     }, [user]);
+        getProductbyEmail(setProducts, googleUser?.email, setApiError);
+    }, [products]);
+    const checkProduct=()=>{
+        console.log(products);
+        console.log(products[0]);
+        console.log(products[0].name);
+    };
+  return (
+    <>
+   <ProductTable props={products}/>
+    <Button onClick={checkProduct} >Check</Button>
+     </>
+  )
+}
 
-//   return (
-//     <>
-//     <Container>
-//     <div>ProductList</div>
-
-//     <Row>Active Product(s)</Row>
-//     <Row></Row>
-//     </Container>
-
-     
-
-//     </>
-//   )
-// }
-
-// export default ProductList
+export default ProductList

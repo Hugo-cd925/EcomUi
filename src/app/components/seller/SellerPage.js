@@ -11,10 +11,17 @@ const SellerPage = () => {
     const [user, setUser] = useState({});
     const [apiError, setApiError] = useState(false);
 
-  //store local storage after user logs in to use to updates
-  //googleUser or context api
-  const googleUser = JSON.parse(window.sessionStorage.getItem("user"));
+  const Navigate = useNavigate();
 
+  const googleUser = JSON.parse(window.sessionStorage.getItem("user"));
+  const loggedIn = JSON.parse(window.sessionStorage.getItem("loggedIn"));
+
+  useEffect(() => {
+    
+   if(loggedIn == null){
+        Navigate('/SignIn');
+   }
+  }, [loggedIn]);
   useEffect(() => {
     getUserByEmail(googleUser?.email, setUser, setApiError);
 
@@ -23,7 +30,6 @@ const SellerPage = () => {
     // fetchUsers(setUser, setApiError);
   }, [user]);
 
-  const Navigate = useNavigate();
 
     /**
      * @name HandleCreate
@@ -42,9 +48,12 @@ const SellerPage = () => {
         Navigate(`/Seller/Edit/${id}`);
         
     };
-
+    /**
+     * @name HandleListedProduct
+     * @description Navigates user to specified route
+     */
     const HandleListedProduct =()=>{
-        Navigate('Seller/Products');
+        Navigate('/Seller/MyProducts');
     };
 
     return (
@@ -63,10 +72,13 @@ const SellerPage = () => {
               <h5 class="card-title text-center">{user?.firstName}</h5>
             </div>
             <div className="my-3">
-                <Button className="offset-1" colSpan="" onClick={HandleCreate}>Create Product</Button>
+                <Button className="offset-1" colSpan="" onClick={HandleCreate}>List Product</Button>
                 <Button className="offset-2" type="button" onClick={() => handleProfile(user.id)}>
-                  Edit Profile
+                  Update Profile
                 </Button>
+                <Button className="offset-3" colSpan="" onClick={HandleListedProduct}>
+                    View Products</Button>
+
             </div>
           </div>
         </div>
