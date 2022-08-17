@@ -1,3 +1,4 @@
+/* global google */
 import {useEffect, useState} from 'react';
 import jwt_decode from 'jwt-decode';
 import { loginUser} from '../seller/SellerService';
@@ -29,12 +30,12 @@ const GoogleLogin = ({ setLoggedIn }) => {
     
     useEffect(() => {
            
-            google.accounts.id.initialize({
+            window.google.accounts.id.initialize({
               client_id: "575948866004-i0lapgehq080re6t6rkesqmln6knlhl9.apps.googleusercontent.com",
               callback : handleCallbackResponse
             });
         
-            google.accounts.id.renderButton(
+            window.google.accounts.id.renderButton(
               document.getElementById("signInDiv"),
               {
                 theme: "outline", size: "large"
