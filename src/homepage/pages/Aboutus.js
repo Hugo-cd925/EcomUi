@@ -17,7 +17,7 @@ const Aboutus = () => {
         <div className="team_member">
             <h3>Hugo Calderon</h3>
             <p className="role">GenSpark Trainee</p>
-            <p>description</p>
+            <p>Skills: DotNet, React, SQL, Azure, Github, Jira</p>
         </div>
         <div className="team_member">
             <h3>Raul Boulocq</h3>

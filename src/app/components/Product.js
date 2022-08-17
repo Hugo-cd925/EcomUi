@@ -9,7 +9,7 @@ import EditButton from "./EditButton";
 
 function Product() {
   const { id } = useParams();
-  const url = `https://localhost:7218/Products/GetById/${id}`;
+  const url = `https://ecomtrading.azurewebsites.net/Products/GetById/${id}`;
   const [prod, setProd] = useState(null);
   const cartFromLocalStorage = localStorage.cart
     ? JSON.parse(localStorage.getItem("cart"))

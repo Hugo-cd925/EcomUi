@@ -25,7 +25,7 @@ import constants from '../../../ultil/Constants';
 };
 
 export async function getProductbyEmail(setProduct,email, setApiError) {
-    console.log('made it');
+ 
     await HttpHelper(`${constants.PRODUCT_ENDPOINT}/${email}`, 'GET')
     .then((response) => {
         return response.json();
