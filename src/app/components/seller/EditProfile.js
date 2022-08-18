@@ -57,7 +57,7 @@ const EditProfile = () => {
         setUser({ ...user, [e.target.id]: e.target.value });
     };
 
-    const btn = { backgroundColor: '#242424' };
+    const btn = { backgroundColor: 'white' };
 
     return (
         <Container style={btn}>

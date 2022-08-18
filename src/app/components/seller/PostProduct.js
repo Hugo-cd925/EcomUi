@@ -38,7 +38,7 @@ const PostProduct = () => {
   // const setActive=()=>{
   //   setProduct({ ...product, active: true });
   // };
-  const btn ={backgroundColor: '#242424'};
+  const btn ={backgroundColor: 'white'};
   return (
     <Container style={btn}>
       <h1>Enter Product Info</h1>

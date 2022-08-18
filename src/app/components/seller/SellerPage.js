@@ -66,18 +66,21 @@ const SellerPage = () => {
                 </p>
             )}
             
-            <div className="container m-5 p-5 ">
+            <div className="container mx-5 mb-5 p-5 ">
         <div className="card-body d-flex justify-content-center offset-2">
-          <div className="card" style={{ width: "50%" }}>
+          <div className="card" style={{ width: "65%" }}>
             <div className="mb-5">
-              <h5 class="card-title text-center">{user?.firstName}</h5>
+              <h5 class="card-title text-center">Welcome, {user?.firstName}!</h5>
+            </div>
+            <div className="fw-semibold text-center">
+              <p>Select from the following to navigate:</p>
             </div>
             <div className="my-3">
                 <Button className="offset-1" colSpan="" onClick={HandleCreate}>List Product</Button>
-                <Button className="offset-2" type="button" onClick={() => handleProfile(user.id)}>
+                <Button className="offset-1" type="button" onClick={() => handleProfile(user.id)}>
                   Update Profile
                 </Button>
-                <Button className="offset-3" colSpan="" onClick={HandleListedProduct}>
+                <Button className="offset-1" colSpan="" onClick={HandleListedProduct}>
                     View Products</Button>
 
             </div>
