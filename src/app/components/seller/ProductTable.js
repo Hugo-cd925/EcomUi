@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table, Button } from 'react-bootstrap';
+import { Table, Button, Container } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 
 
@@ -16,7 +16,8 @@ const ProductTable = (props) => {
     if (products.length > 0){
         return (
             <>
-                <Table>
+  
+                <Table  striped bordered hover variant="dark">
                     <thead>
                         <tr>
                            {column && column.map((item, index) => <TableHeadItem item={item}/>)}
@@ -34,7 +35,7 @@ const ProductTable = (props) => {
                                         {product.id}
                                     </td>
                                     <td>
-                                        {product?.name}
+                                        {product.name}
                                     </td>
                                     <td>
                                         {product.description}
@@ -46,7 +47,7 @@ const ProductTable = (props) => {
                                         {product.price}
                                     </td>
                                     <td>
-                                        <Button onClick={() => viewProduct(product.id)}>View</Button>
+                                        <Button  variant="info" onClick={() => viewProduct(product.id)}>View</Button>
                                     </td>
 
                                 </tr>
@@ -55,7 +56,7 @@ const ProductTable = (props) => {
                         {/* {products && products.map((item, index) => <TableRow item={item} column={column} />)} */}
                     </tbody>
                 </Table>
-    
+               
             </>
     
         )
