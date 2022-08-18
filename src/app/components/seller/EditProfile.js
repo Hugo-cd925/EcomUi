@@ -50,7 +50,7 @@ const EditProfile = () => {
     const nav = useNavigate();
     
     const cancelProfile = () => {
-        nav('Seller');
+        nav('/Seller', { replace: true });
     }
 
     const onChange = (e) => {
@@ -108,7 +108,7 @@ const EditProfile = () => {
 
                 </Row>
                 <Row>
-                    <Button onClick={cancelProfile} variant="secondary" type="submit">
+                    <Button onClick={cancelProfile} variant="danger" type="submit">
                         Cancel
                     </Button>
 

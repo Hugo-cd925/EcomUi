@@ -25,10 +25,6 @@ const SellerPage = () => {
 
   useEffect(() => {
     getUserByEmail(googleUser?.email, setUser, setApiError);
-
-    //fetchUserById(setUser, googleUser., setApiError);
-    // getGoogleUser(setUser);
-    // fetchUsers(setUser, setApiError);
   }, []);
 
 
@@ -70,7 +66,7 @@ const SellerPage = () => {
         <div className="card-body d-flex justify-content-center offset-2">
           <div className="card" style={{ width: "50%" }}>
             <div className="mb-5">
-              <h5 class="card-title text-center">{user?.firstName}</h5>
+              <h5 class="card-title text-center">{user.firstName + ' ' + user.lastName}</h5>
             </div>
             <div className="my-3">
                 <Button className="offset-1" colSpan="" onClick={HandleCreate}>List Product</Button>
