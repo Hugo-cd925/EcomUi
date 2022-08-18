@@ -22,7 +22,6 @@ const ProductList = () => {
         { heading:'Name', value:'name' },
         { heading:'Description', value:'description'},
         {heading:'Price', value:'price'},
-        {heading:'Image', value:'img'},
         {heading:'View', value:'view'}
     ]
   return (

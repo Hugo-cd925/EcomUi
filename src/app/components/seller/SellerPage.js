@@ -66,10 +66,11 @@ const SellerPage = () => {
         <div className="card-body d-flex justify-content-center offset-2">
           <div className="card" style={{ width: "65%" }}>
             <div className="mb-5">
-              <h5 class="card-title text-center">Welcome, {user?.firstName}!</h5>
+              <h2 class="card-title text-center">Welcome, {user?.firstName}!</h2>
             </div>
             <div className="fw-semibold text-center">
-              <p>Select from the following to navigate:</p>
+              <h3>Select from the following to navigate:</h3>
+            
             </div>
             <div className="my-3">
                 <Button className="offset-1" colSpan="" onClick={HandleCreate}>List Product</Button>

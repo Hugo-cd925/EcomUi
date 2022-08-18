@@ -40,12 +40,11 @@ const ProductTable = (props) => {
                                     <td>
                                         {product.description}
                                     </td>
-                                    <td>
-                                        {product.active}
-                                    </td>
+                                   
                                     <td>
                                         {product.price}
                                     </td>
+                                  
                                     <td>
                                         <Button  variant="info" onClick={() => viewProduct(product.id)}>View</Button>
                                     </td>
